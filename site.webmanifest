@@ -1,0 +1,23 @@
+{
+  "name": "Dr. Louise Cerdeira — Portfolio",
+  "short_name": "L. Cerdeira",
+  "description": "Computational biologist and software engineer — genomic surveillance, antimicrobial resistance, open science.",
+  "start_url": "/portfolio/",
+  "scope": "/portfolio/",
+  "display": "standalone",
+  "background_color": "#fff7ec",
+  "theme_color": "#ff6b8a",
+  "icons": [
+    {
+      "src": "assets/images/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "assets/images/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    }
+  ]
+}

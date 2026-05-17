@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0"    stop-color="#ff6b8a"/>
+      <stop offset="0.5"  stop-color="#ffb347"/>
+      <stop offset="1"    stop-color="#a78bfa"/>
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="14" fill="#fff7ec"/>
+  <!-- DNA-ish double helix glyph -->
+  <g stroke="url(#g)" stroke-width="3.5" stroke-linecap="round" fill="none">
+    <path d="M18 12 Q32 24 18 36 Q4 48 18 52"/>
+    <path d="M46 12 Q32 24 46 36 Q60 48 46 52"/>
+    <line x1="22" y1="18" x2="42" y2="18"/>
+    <line x1="20" y1="28" x2="44" y2="28"/>
+    <line x1="22" y1="38" x2="42" y2="38"/>
+    <line x1="24" y1="48" x2="40" y2="48"/>
+  </g>
+  <!-- joy dot -->
+  <circle cx="52" cy="52" r="5" fill="#ff6b8a"/>
+</svg>

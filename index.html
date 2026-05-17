@@ -1,281 +1,868 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="en" data-theme="light">
 <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
+  <!-- Primary SEO -->
+  <title>Dr. Louise Cerdeira — Computational Biologist & Software Engineer | Genomic Surveillance, AMR, One Health</title>
+  <meta name="description" content="Dr. Louise Cerdeira is a computational biologist and software engineer leading AMRnet, TyphiNET, PlasmidNET, and InfectoNET — open platforms for genomic surveillance of antimicrobial resistance. Publications, projects, writing, and global collaborations on bioinformatics, One Health, and open science." />
+  <meta name="author" content="Dr. Louise Teixeira Cerdeira" />
+  <meta name="keywords" content="Louise Cerdeira, Dr Louise Cerdeira, bioinformatics, computational biology, genomic surveillance, antimicrobial resistance, AMR, AMRnet, TyphiNET, PlasmidNET, InfectoNET, Kleborate, One Health, microbial genomics, plasmid biology, vector biology, Wolbachia, Anopheles, Klebsiella, Salmonella Typhi, open science, global health" />
+  <link rel="canonical" href="https://lcerdeira.github.io/portfolio/" />
+  <meta name="theme-color" content="#fff7ec" media="(prefers-color-scheme: light)" />
+  <meta name="theme-color" content="#1a1428" media="(prefers-color-scheme: dark)" />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
 
-    <!--Copyright and License
-  Start Bootstrap is an open source library of free Bootstrap 
-  templates and themes. All of the free templates and themes on Start 
-  Bootstrap are released under the MIT license, which means you can use 
-  them for any purpose, even for commercial projects.
-  https://startbootstrap.com
-  https://twitter.com/SBootstrap
-  Start Bootstrap was created by and is maintained by David Miller,
-  http://davidmiller.io
-  http://davidmiller.io
-  https://twitter.com/davidmillerskt
-  https://github.com/davidtmiller
-  Start Bootstrap is based on the Bootstrap, https://getbootstrap.com/
-  framework created by Mark Otto, https://twitter.com/mdo and Jacob Thorton, 
-  https://twitter.com/fat
-  Copyright 2013-2020 Start Bootstrap LLC. Code released under the MIT,
-  https://github.com/StartBootstrap/startbootstrap-stylish-portfolio/blob/gh-pages/LICENSE
-  https://startbootstrap.com/themes/stylish-portfolio
-  -->
-    <title>Portfolio - Louise Cerdeira</title>
-    <!-- Bootstrap Core CSS -->
-    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Open Graph -->
+  <meta property="og:type" content="profile" />
+  <meta property="og:locale" content="en_GB" />
+  <meta property="og:title" content="Dr. Louise Cerdeira — Computational Biologist & Software Engineer" />
+  <meta property="og:description" content="Building open platforms that turn pathogen genomes into public-health decisions. Creator of AMRnet, TyphiNET, PlasmidNET, and InfectoNET." />
+  <meta property="og:url" content="https://lcerdeira.github.io/portfolio/" />
+  <meta property="og:image" content="https://lcerdeira.github.io/portfolio/assets/images/og-image.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Dr. Louise Cerdeira — portfolio" />
+  <meta property="profile:first_name" content="Louise" />
+  <meta property="profile:last_name" content="Cerdeira" />
 
-    <!-- Custom Fonts -->
-    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
-    <link href="vendor/simple-line-icons/css/simple-line-icons.css" rel="stylesheet">
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@LouiseCerdeira" />
+  <meta name="twitter:creator" content="@LouiseCerdeira" />
+  <meta name="twitter:title" content="Dr. Louise Cerdeira — Computational Biologist & Software Engineer" />
+  <meta name="twitter:description" content="Open platforms turning pathogen genomes into public-health decisions. AMRnet · TyphiNET · PlasmidNET · InfectoNET." />
+  <meta name="twitter:image" content="https://lcerdeira.github.io/portfolio/assets/images/og-image.jpg" />
 
-    <!-- Custom CSS -->
-    <link href="css/stylish-portfolio.min.css" rel="stylesheet">
+  <!-- Favicons -->
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg" />
+  <link rel="icon" type="image/x-icon" href="assets/images/icon/favicon.ico" />
+  <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png" />
+  <link rel="manifest" href="site.webmanifest" />
 
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Newsreader:ital,wght@0,400;0,500;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="assets/css/main.css" />
+
+  <!-- JSON-LD: Person schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Dr. Louise Cerdeira",
+    "alternateName": ["Louise Teixeira Cerdeira", "Louise T. Cerdeira"],
+    "givenName": "Louise",
+    "familyName": "Cerdeira",
+    "honorificPrefix": "Dr.",
+    "url": "https://lcerdeira.github.io/portfolio/",
+    "image": "https://lcerdeira.github.io/portfolio/assets/images/profile.jpg",
+    "jobTitle": "Computational Biologist & Lead Software Engineer",
+    "alumniOf": [
+      { "@type": "CollegeOrUniversity", "name": "University of São Paulo", "url": "https://www5.usp.br/" },
+      { "@type": "CollegeOrUniversity", "name": "Federal University of Pará" }
+    ],
+    "knowsAbout": [
+      "Bioinformatics",
+      "Computational Biology",
+      "Genomic Surveillance",
+      "Antimicrobial Resistance",
+      "Microbial Genomics",
+      "Vector Biology",
+      "One Health",
+      "Software Engineering",
+      "Cloud Computing",
+      "GPU computing"
+    ],
+    "sameAs": [
+      "https://github.com/lcerdeira",
+      "https://www.linkedin.com/in/louisecerdeira",
+      "https://x.com/LouiseCerdeira",
+      "https://bsky.app/profile/louisecerdeira.bsky.social",
+      "https://orcid.org/0000-0002-4495-2615",
+      "https://scholar.google.com/citations?user=O2dcz5MAAAAJ",
+      "https://www.amrnet.org",
+      "https://www.typhi.net",
+      "https://www.plasmidnet.org",
+      "https://www.infectonet.org"
+    ],
+    "identifier": [
+      { "@type": "PropertyValue", "propertyID": "ORCID", "value": "0000-0002-4495-2615" }
+    ],
+    "nationality": "Brazilian"
+  }
+  </script>
+
+  <!-- JSON-LD: Website -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "url": "https://lcerdeira.github.io/portfolio/",
+    "name": "Dr. Louise Cerdeira — Portfolio",
+    "author": { "@type": "Person", "name": "Dr. Louise Cerdeira" },
+    "inLanguage": "en"
+  }
+  </script>
 </head>
+<body id="top">
 
-<body id="page-top">
-
-    <!-- Navigation -->
-    <a class="menu-toggle rounded" href="#">
-        <i class="fas fa-bars"></i>
+<!-- ============ NAV ============ -->
+<header class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="#top" class="nav-brand" aria-label="Louise Cerdeira — home">
+      <span class="dot" aria-hidden="true"></span>Louise Cerdeira
     </a>
-    <nav id="sidebar-wrapper">
-        <ul class="sidebar-nav">
-            <li class="sidebar-brand">
-                <a class="js-scroll-trigger" href="#page-top">Portfolio</a>
-            </li>
-            <li class="sidebar-nav-item">
-                <a class="js-scroll-trigger" href="#page-top">Home</a>
-            </li>
-            <li class="sidebar-nav-item">
-                <a class="js-scroll-trigger" href="#about">About me</a>
-            </li>
-            <li class="sidebar-nav-item">
-                <a class="js-scroll-trigger" href="#about">Research Projects</a>
-            </li>
-            <li class="sidebar-nav-item">
-                <a class="js-scroll-trigger" href="#services">Publications</a>
-            </li>
-            <li class="sidebar-nav-item">
-                <li class="sidebar-nav-item">
-                    <a class="js-scroll-trigger" href="#portfolio">Photography portfolio</a>
-                </li>
-                <li class="sidebar-nav-item">
-                    <li class="sidebar-nav-item">
-                        <a class="js-scroll-trigger" href="#portfolio">Poems & Fragmental books</a>
-                    </li>
-                    <li class="sidebar-nav-item">
-                        <a class="js-scroll-trigger" href="#portfolio">Podcast - A popcorn called Wilson</a>
-                    </li>
-                    <li class="sidebar-nav-item">
-                        <a class="js-scroll-trigger" href="#portfolio">LuLu YouTube Channel</a>
-                    </li>
-                </li>
-                <li class="sidebar-nav-item">
-                    <a class="js-scroll-trigger" href="#contact">Contact</a>
-                </li>
-        </ul>
+    <nav aria-label="Primary">
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#about">About</a></li>
+        <li><a href="#research">Research</a></li>
+        <li><a href="#collaborations">Map</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#code">Code</a></li>
+        <li><a href="#writing">Writing</a></li>
+        <li><a href="#creative">Creative</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
     </nav>
-
-    <!-- Header -->
-    <header class="masthead d-flex">
-        <div class="container text-right">
-            <h1 class="mb-1">Dr Louise Cerdeira</h1>
-            <h5 class="mb-12">
-                <em>Scientist, Bioinformatician, Developer/DevOps Engineer, 
-                    UI/UX Designer & Proud Geek</em></h5>
-            <a class="btn btn-primary btn-xl js-scroll-trigger" href="#about">Find Out More</a>
-        </div>
-        <div class="overlay"></div>
-    </header>
-
-    <!-- About -->
-    <section class="content-section bg-light" id="about">
-        <div class="container text-center">
-            <div class="row">
-                <div class="col-lg-10 mx-auto">
-                    <h2>Welcome to my life, fell free be curious!</h2>
-                    <p class="lead mb-5">Bioinformatics Scientist
-                        <a href="https://unsplash.com/">Unsplash</a>!</p>
-                    <a class="btn btn-dark btn-xl js-scroll-trigger" href="#services">My genome S2 code Life</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Services -->
-    <section class="content-section bg-primary text-white text-center" id="services">
-        <div class="container">
-            <div class="content-section-heading">
-                <h3 class="text-secondary mb-0">Services</h3>
-                <h2 class="mb-5">My coding life, Podcast, Youtube Channel</h2>
-            </div>
-            <div class="row">
-                <div class="col-lg-3 col-md-6 mb-5 mb-lg-0">
-                    <span class="service-icon rounded-circle mx-auto mb-3">
-            <i class="icon-screen-smartphone"></i>
-          </span>
-                    <h4>
-                        <strong>Resilient</strong>
-                    </h4>
-                    <p class="text-faded mb-0">Looks great on any screen size!</p>
-                </div>
-                <div class="col-lg-3 col-md-6 mb-5 mb-lg-0">
-                    <span class="service-icon rounded-circle mx-auto mb-3">
-            <i class="icon-pencil"></i>
-          </span>
-                    <h4>
-                        <strong>Redesigned</strong>
-                    </h4>
-                    <p class="text-faded mb-0">Freshly redesigned for all Bioinformatics and/or IT projects</p>
-                </div>
-                <div class="col-lg-3 col-md-6 mb-5 mb-md-0">
-                    <span class="service-icon rounded-circle mx-auto mb-3">
-            <i class="icon-like"></i>
-          </span>
-                    <h4>
-                        <strong>Milestones</strong>
-                    </h4>
-                    <p class="text-faded mb-0">Enjoy it
-                        <i class="fas fa-heart"></i> Start to explore my life</p>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <span class="service-icon rounded-circle mx-auto mb-3">
-            <i class="icon-mustache"></i>
-          </span>
-                    <h4>
-                        <strong>Question</strong>
-                    </h4>
-                    <p class="text-faded mb-0">Be curious</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Callout -->
-    <section class="callout">
-        <div class="container text-center">
-            <h2 class="mx-auto mb-5">Welcome to
-                <em>my</em> life!
-            </h2>
-            <a class="btn btn-primary btn-xl" href="https://drive.google.com/file/d/173mmYaLHkCr6_1VdgiljdM5AOPPSfknB/view?usp=sharing">Download Now - My CV!</a>
-        </div>
-    </section>
-
-    <!-- Portfolio -->
-    <section class="content-section" id="portfolio">
-        <div class="container">
-            <div class="content-section-heading text-center">
-                <h3 class="text-secondary mb-0">Portfolio</h3>
-                <h2 class="mb-5">Recent Projects</h2>
-            </div>
-            <div class="row no-gutters">
-                <div class="col-lg-6">
-                    <a class="portfolio-item" href="#!">
-                        <div class="caption">
-                            <div class="caption-content">
-                                <div class="h2">Research Projects</div>
-                                <p class="mb-0">Since 2009-2020 - updating!</p>
-                            </div>
-                        </div>
-                        <img class="img-fluid" src="img/portfolio-1.jpg" alt="">
-                    </a>
-                </div>
-                <div class="col-lg-6">
-                    <a class="portfolio-item" href="#!">
-                        <div class="caption">
-                            <div class="caption-content">
-                                <div class="h2">Web dash</div>
-                                <p class="mb-0">Updating!</p>
-                            </div>
-                        </div>
-                        <img class="img-fluid" src="img/portfolio-2.jpg" alt="">
-                    </a>
-                </div>
-                <div class="col-lg-6">
-                    <a class="portfolio-item" href="#!">
-                        <div class="caption">
-                            <div class="caption-content">
-                                <div class="h2">Bioinformatic pipelines</div>
-                                <p class="mb-0">Strawberries are such a tasty snack, especially with a little sugar on top!</p>
-                            </div>
-                        </div>
-                        <img class="img-fluid" src="img/portfolio-3.jpg" alt="">
-                    </a>
-                </div>
-                <div class="col-lg-6">
-                    <a class="portfolio-item" href="#!">
-                        <div class="caption">
-                            <div class="caption-content">
-                                <div class="h2">General web scrapping, data wrangler and parser scripts</div>
-                                <p class="mb-0">Updatings.</p>
-                            </div>
-                        </div>
-                        <img class="img-fluid" src="img/portfolio-4.jpg" alt="">
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Call to Action -->
-    <section class="content-section bg-primary text-white">
-        <div class="container text-center">
-            <h2 class="mb-4">The buttons below are impossible to resist...</h2>
-            <a href="#!" class="btn btn-xl btn-light mr-4">Click Me!</a>
-            <a href="#!" class="btn btn-xl btn-dark">Look at Me!</a>
-        </div>
-    </section>
-
-    <!-- Map -->
-    <div id="contact" class="map">
-        <iframe width="600" height="450" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJla-mjiJo1moReMJ-LE3VmLs&key=AIzaSyCaiazuoqaui9HmxHtnp3WqcFvK3Ze-B0A" allowfullscreen></iframe>
-        <br />
+    <div class="nav-actions">
+      <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle colour theme">
+        <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41" stroke-linecap="round"/></svg>
+      </button>
+      <button class="nav-toggle" id="navToggle" type="button" aria-label="Toggle menu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
     </div>
-    <!-- Footer -->
-    <footer class="footer text-center">
-        <div class="container">
-            <ul class="list-inline mb-5">
-                <li class="list-inline-item">
-                </li>
-                <li class="list-inline-item">
-                    <a class="social-link rounded-circle text-white mr-3" href="https://twitter.com/lcerdeira">
-                        <i class="icon-social-twitter"></i>
-                    </a>
-                </li>
-                <li class="list-inline-item">
-                    <a class="social-link rounded-circle text-white" href="https://github.com/lcerdeira">
-                        <i class="icon-social-github"></i>
-                    </a>
-                </li>
-            </ul>
-            <p class="text-muted small mb-0">Copyright &copy; Louise Cerdeira 2020</p>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="hero">
+  <div class="hero-bg" aria-hidden="true">
+    <canvas id="heroCanvas"></canvas>
+  </div>
+  <div class="container hero-inner">
+    <div>
+      <p class="hero-eyebrow"><span class="dot"></span>Available for collaboration · Open science</p>
+      <h1>
+        Dr. Louise<br>
+        <span class="accent">Cerdeira</span> ✦
+      </h1>
+      <p class="hero-tag">
+        Computational biologist and software engineer building open platforms that turn pathogen
+        genomes into public-health decisions. Creator of
+        <a href="https://www.amrnet.org" target="_blank" rel="noopener" class="text-accent">AMRnet</a>,
+        <a href="https://www.typhi.net" target="_blank" rel="noopener" class="text-accent">TyphiNET</a>,
+        <a href="https://www.plasmidnet.org" target="_blank" rel="noopener" class="text-accent">PlasmidNET</a>,
+        and
+        <a href="https://www.infectonet.org" target="_blank" rel="noopener" class="text-accent">InfectoNET</a>.
+      </p>
+      <div class="hero-cta">
+        <a href="#projects" class="btn btn-primary">View my work <span class="arrow">→</span></a>
+        <a href="#contact" class="btn">Get in touch</a>
+        <a href="https://drive.google.com/file/d/173mmYaLHkCr6_1VdgiljdM5AOPPSfknB/view?usp=sharing" target="_blank" rel="noopener" class="btn btn-ghost">
+          Download CV
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        </a>
+      </div>
+
+      <div class="hero-socials" aria-label="Quick links">
+        <a class="social-pill" href="https://github.com/lcerdeira" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.55v-2.02c-3.2.69-3.87-1.36-3.87-1.36-.52-1.34-1.28-1.7-1.28-1.7-1.05-.71.08-.7.08-.7 1.16.08 1.77 1.2 1.77 1.2 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.47.11-3.06 0 0 .97-.31 3.17 1.18a11.04 11.04 0 0 1 5.76 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.77.11 3.06.74.81 1.19 1.84 1.19 3.1 0 4.42-2.69 5.39-5.26 5.68.41.36.78 1.07.78 2.15v3.19c0 .31.21.67.8.55C20.21 21.38 23.5 17.08 23.5 12 23.5 5.65 18.35.5 12 .5Z"/></svg>
+          GitHub
+        </a>
+        <a class="social-pill" href="https://www.linkedin.com/in/louisecerdeira" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5ZM3 9h4v12H3V9Zm7 0h3.8v1.71h.05c.53-1 1.83-2.06 3.77-2.06C21.5 8.65 22 11 22 14.06V21h-4v-6.27c0-1.5-.03-3.43-2.09-3.43-2.09 0-2.41 1.63-2.41 3.32V21h-4V9Z"/></svg>
+          LinkedIn
+        </a>
+        <a class="social-pill" href="https://scholar.google.com/citations?user=O2dcz5MAAAAJ" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2 1 9l11 7 9-5.7V17h2V9l-11-7Zm0 12-6-3.8v3.4C6 16.6 8.7 18 12 18s6-1.4 6-4.4v-3.4L12 14Z"/></svg>
+          Scholar
+        </a>
+        <a class="social-pill" href="https://orcid.org/0000-0002-4495-2615" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.6 0 12 0ZM7.4 17.7H5.6V7.6h1.8v10.1ZM6.5 6.4a1.1 1.1 0 1 1 0-2.2 1.1 1.1 0 0 1 0 2.2Zm12.2 6.3c0 3.2-2.3 5-5.4 5h-3.9V7.6h3.9c3.5 0 5.4 2.1 5.4 5.1Zm-5.6-3.5h-1.9v6.9h1.9c2.5 0 3.7-1.3 3.7-3.4 0-2.3-1.5-3.5-3.7-3.5Z"/></svg>
+          ORCID
+        </a>
+      </div>
+
+      <div class="hero-stats">
+        <div><span class="stat-num">5,300<span class="unit">+</span></span><span class="stat-label">Citations</span></div>
+        <div><span class="stat-num">34</span><span class="stat-label">h-index</span></div>
+        <div><span class="stat-num">80<span class="unit">+</span></span><span class="stat-label">Publications</span></div>
+        <div><span class="stat-num">4</span><span class="stat-label">Live platforms</span></div>
+      </div>
+    </div>
+  </div>
+  <a href="#about" class="scroll-hint" aria-label="Scroll to content">Scroll</a>
+</section>
+
+<!-- ============ ABOUT ============ -->
+<section id="about">
+  <div class="container">
+    <p class="section-label" data-reveal>01 — About</p>
+    <h2 data-reveal>Scientist by training,<br>engineer by practice.</h2>
+
+    <div class="about-grid" data-reveal>
+      <div class="about-photo-wrap">
+        <img class="about-photo" src="assets/images/profile.jpg" alt="Portrait of Dr. Louise Cerdeira" loading="lazy" width="280" height="280" />
+      </div>
+      <div>
+        <p class="lead">
+          I'm a Brazilian computational biologist living and working in the UK. My day-to-day sits at the
+          intersection of microbial genomics, web platforms, and global public health — building the tools
+          that make genomic surveillance accessible to anyone, anywhere.
+        </p>
+        <p>
+          I trained as a computer scientist before moving into bioinformatics — a PhD at the University of
+          São Paulo on the comparative genomics of multidrug-resistant <em>Klebsiella pneumoniae</em>, then
+          postdoctoral and engineering roles across three continents. Today I lead the design and
+          development of
+          <a href="https://www.amrnet.org" target="_blank" rel="noopener">AMRnet</a>,
+          <a href="https://www.typhi.net" target="_blank" rel="noopener">TyphiNET</a>,
+          <a href="https://www.plasmidnet.org" target="_blank" rel="noopener">PlasmidNET</a>, and
+          <a href="https://www.infectonet.org" target="_blank" rel="noopener">InfectoNET</a> —
+          open surveillance dashboards used by ministries, reference labs, and researchers across the
+          globe.
+        </p>
+        <p>
+          I care a lot about <strong>open science</strong>, the
+          <strong>One Health</strong> framing of antimicrobial resistance, and making
+          high-performance bioinformatics affordable for low- and middle-income countries — which is
+          increasingly where my newer work on GPU-accelerated aligners and embedded pipelines lives.
+        </p>
+
+        <ul class="facts">
+          <li><span class="label">Role</span><span class="value">Computational Biologist · Software Engineer · Platform Lead</span></li>
+          <li><span class="label">Based in</span><span class="value">United Kingdom · 🇧🇷 originally Brazil</span></li>
+          <li><span class="label">ORCID</span><span class="value"><a href="https://orcid.org/0000-0002-4495-2615" target="_blank" rel="noopener">0000-0002-4495-2615</a></span></li>
+          <li><span class="label">Scholar</span><span class="value"><a href="https://scholar.google.com/citations?user=O2dcz5MAAAAJ" target="_blank" rel="noopener">5,300+ citations · h-index 34</a></span></li>
+          <li><span class="label">Languages</span><span class="value">English · Portuguese · Spanish</span></li>
+          <li><span class="label">Currently</span><span class="value">AMR copy-number variation in <em>Klebsiella</em>; GPU-native aligners for LMIC surveillance</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ RESEARCH ============ -->
+<section id="research" style="background: var(--bg-elev);">
+  <div class="container">
+    <p class="section-label" data-reveal>02 — Research</p>
+    <h2 data-reveal>What I work on.</h2>
+    <p class="lead" style="max-width: 42rem; margin-bottom: var(--space-7);" data-reveal>
+      My research uses microbial whole-genome sequencing and software engineering to track,
+      understand, and contain antimicrobial-resistant pathogens — connecting bench, bioinformatics,
+      and public-health practice.
+    </p>
+
+    <div class="research-areas">
+      <div class="area-card" data-reveal>
+        <span class="area-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a4 4 0 0 0-4 4v2H6v8h2v6h8v-6h2V8h-2V6a4 4 0 0 0-4-4Z"/><path d="M9 14h6M9 11h6"/></svg>
+        </span>
+        <h4>Genomic surveillance of AMR</h4>
+        <p>Dashboards and pipelines for tracking resistance in WHO-priority pathogens —
+          <em>Klebsiella</em>, <em>Salmonella</em>, <em>E. coli</em>, <em>M. tuberculosis</em>.</p>
+      </div>
+
+      <div class="area-card" data-reveal>
+        <span class="area-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg>
+        </span>
+        <h4>One Health</h4>
+        <p>Resistance crosses people, animals, food, and the environment. I work on shared genomic
+          infrastructure that lets us see all of it at once.</p>
+      </div>
+
+      <div class="area-card" data-reveal>
+        <span class="area-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h18M12 3v18M5 5l14 14M19 5 5 19"/></svg>
+        </span>
+        <h4>Vector biology</h4>
+        <p>Insecticide resistance in <em>Anopheles</em> and <em>Wolbachia</em> endosymbionts —
+          with the Heinz Lab and MalariaGEN.</p>
+      </div>
+
+      <div class="area-card" data-reveal>
+        <span class="area-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M8 21h8M12 18v3"/><path d="M7 9h2v3H7zM11 9h2v6h-2zM15 11h2v4h-2z"/></svg>
+        </span>
+        <h4>GPU bioinformatics for LMICs</h4>
+        <p>Building cloud-native and embedded-system aligners
+          (<a href="https://github.com/lcerdeira/dragon" target="_blank" rel="noopener">Dragon</a>,
+          <a href="https://github.com/lcerdeira/CNVRock" target="_blank" rel="noopener">CNVRock</a>)
+          so sequencing analysis doesn't need a HPC cluster.</p>
+      </div>
+    </div>
+
+    <h3 style="margin-top: var(--space-9); margin-bottom: var(--space-5);" data-reveal>Selected publications</h3>
+    <ol class="pubs" data-reveal>
+      <li class="pub">
+        <span class="pub-year">2026</span>
+        <div>
+          <span class="pub-title">AMRnet: a data visualization platform to interactively explore pathogen variants and antimicrobial resistance</span>
+          <span class="pub-meta"><strong>Cerdeira LT</strong>, Dyson ZA, Sharma V, Maranga M, Foster-Nyarko E, Carey ME, Holt KE — <em>Nucleic Acids Research</em>, 54(D1):D691–D702</span>
         </div>
-    </footer>
+        <div class="pub-links">
+          <a href="https://doi.org/10.1093/nar/gkaf1101" target="_blank" rel="noopener">DOI</a>
+          <a href="https://www.amrnet.org" target="_blank" rel="noopener">Live</a>
+        </div>
+      </li>
+      <li class="pub">
+        <span class="pub-year">2025</span>
+        <div>
+          <span class="pub-title">The TyphiNET data visualisation dashboard: unlocking <em>Salmonella</em> Typhi genomics data to support public health</span>
+          <span class="pub-meta">Dyson ZA, <strong>Cerdeira L</strong>, Sharma V, Carey ME, Holt KE & Global Typhoid Genomics Consortium — <em>Genome Medicine</em></span>
+        </div>
+        <div class="pub-links">
+          <a href="https://doi.org/10.1186/s13073-025-01470-4" target="_blank" rel="noopener">DOI</a>
+          <a href="https://www.typhi.net" target="_blank" rel="noopener">Live</a>
+        </div>
+      </li>
+      <li class="pub">
+        <span class="pub-year">2023</span>
+        <div>
+          <span class="pub-title">Genome-wide association studies reveal novel loci associated with pyrethroid and organophosphate resistance in <em>Anopheles gambiae</em> and <em>An. coluzzii</em></span>
+          <span class="pub-meta">Lucas ER, Nagi SC, Egyir-Yawson A, <em>et al.</em>, <strong>Cerdeira L</strong>, et al. — <em>Nature Communications</em>, 14:4946</span>
+        </div>
+        <div class="pub-links"><a href="https://doi.org/10.1038/s41467-023-40693-0" target="_blank" rel="noopener">DOI</a></div>
+      </li>
+      <li class="pub">
+        <span class="pub-year">2022</span>
+        <div>
+          <span class="pub-title">WHO Critical Priority <em>Escherichia coli</em> as One Health challenge for a post-pandemic scenario</span>
+          <span class="pub-meta">Fuga B, Sellera FP, <strong>Cerdeira L</strong>, <em>et al.</em> — <em>Microbiology Spectrum</em>, 10(2)</span>
+        </div>
+        <div class="pub-links"><a href="https://doi.org/10.1128/spectrum.01256-21" target="_blank" rel="noopener">DOI</a></div>
+      </li>
+      <li class="pub">
+        <span class="pub-year">2022</span>
+        <div>
+          <span class="pub-title">Linear plasmids in <em>Klebsiella</em> and other Enterobacteriaceae</span>
+          <span class="pub-meta">Hawkey J, Cottingham H, Tokolyi A, Wick RR, Judd LM, <strong>Cerdeira L</strong>, <em>et al.</em> — <em>Microbial Genomics</em></span>
+        </div>
+        <div class="pub-links"><a href="https://doi.org/10.1099/mgen.0.000807" target="_blank" rel="noopener">DOI</a></div>
+      </li>
+      <li class="pub">
+        <span class="pub-year">2021</span>
+        <div>
+          <span class="pub-title">A genomic surveillance framework and genotyping tool for <em>Klebsiella pneumoniae</em> and its related species complex</span>
+          <span class="pub-meta">Lam MMC, Wick RR, Watts SC, <strong>Cerdeira LT</strong>, Wyres KL, Holt KE — <em>Nature Communications</em>, 12:4188 · <strong>1,000+ citations</strong></span>
+        </div>
+        <div class="pub-links">
+          <a href="https://doi.org/10.1038/s41467-021-24448-3" target="_blank" rel="noopener">DOI</a>
+          <a href="https://github.com/klebgenomics/Kleborate" target="_blank" rel="noopener">Code</a>
+        </div>
+      </li>
+      <li class="pub">
+        <span class="pub-year">2021</span>
+        <div>
+          <span class="pub-title">Trycycler: consensus long-read assemblies for bacterial genomes</span>
+          <span class="pub-meta">Wick RR, Judd LM, <strong>Cerdeira LT</strong>, Hawkey J, Méric G, Vezina B, Wyres KL, Holt KE — <em>Genome Biology</em>, 22:266</span>
+        </div>
+        <div class="pub-links">
+          <a href="https://doi.org/10.1186/s13059-021-02483-z" target="_blank" rel="noopener">DOI</a>
+          <a href="https://github.com/rrwick/Trycycler" target="_blank" rel="noopener">Code</a>
+        </div>
+      </li>
+      <li class="pub">
+        <span class="pub-year">2019</span>
+        <div>
+          <span class="pub-title">Small IncQ1 and Col-like plasmids harbouring bla<sub>KPC-2</sub> in high-risk lineages of <em>Klebsiella pneumoniae</em> CG258</span>
+          <span class="pub-meta"><strong>Cerdeira LT</strong>, Lam MMC, Wyres KL, Wick RR, Judd LM, Lopes R, <em>et al.</em> — <em>Microbial Drug Resistance</em></span>
+        </div>
+        <div class="pub-links"><a href="https://orcid.org/0000-0002-4495-2615" target="_blank" rel="noopener">ORCID</a></div>
+      </li>
+      <li class="pub">
+        <span class="pub-year">2013</span>
+        <div>
+          <span class="pub-title">The genome of <em>Anopheles darlingi</em>, the main neotropical malaria vector</span>
+          <span class="pub-meta">Marinotti O, Cerqueira GC, de Almeida LGP, <em>et al.</em>, <strong>Cerdeira LT</strong>, <em>et al.</em> — <em>Nucleic Acids Research</em>, 41(15):7387–7400</span>
+        </div>
+        <div class="pub-links"><a href="https://academic.oup.com/nar/article/41/15/7387/2412724" target="_blank" rel="noopener">Link</a></div>
+      </li>
+    </ol>
+    <p style="margin-top: var(--space-6);" data-reveal>
+      <a class="btn" href="https://scholar.google.com/citations?user=O2dcz5MAAAAJ" target="_blank" rel="noopener">Full list on Google Scholar <span class="arrow">→</span></a>
+      <a class="btn btn-ghost" href="https://orcid.org/0000-0002-4495-2615" target="_blank" rel="noopener">ORCID record</a>
+    </p>
+  </div>
+</section>
 
-    <!-- Scroll to Top Button-->
-    <a class="scroll-to-top rounded js-scroll-trigger" href="#page-top">
-        <i class="fas fa-angle-up"></i>
-    </a>
+<!-- ============ GLOBAL COLLABORATIONS MAP ============ -->
+<section id="collaborations">
+  <div class="container">
+    <p class="section-label" data-reveal>03 — Global collaborations</p>
+    <h2 data-reveal>A worldwide<br><span style="background:linear-gradient(120deg,var(--accent),var(--accent-2),var(--accent-3),var(--accent-4));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;font-style:italic;">network of co-authors.</span></h2>
+    <p class="lead" style="max-width: 42rem; margin-bottom: var(--space-7);" data-reveal>
+      Published research with colleagues across six continents — surveillance teams, reference labs,
+      universities, ministries of health, and open-source communities. Hover any marker to see the
+      country.
+    </p>
 
-    <!-- Bootstrap core JavaScript -->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <div class="map-wrap" data-reveal>
+      <svg class="map-svg" viewBox="0 0 1000 500" role="img" aria-label="World map showing countries of co-authors">
+        <!-- Continent silhouettes (stylised, low-poly) -->
+        <g class="land">
+          <!-- North America -->
+          <path d="M 130 70 Q 175 55 230 65 Q 285 70 305 95 L 315 130 L 305 165 L 285 195 L 260 215 Q 230 220 200 210 L 175 195 L 155 170 L 145 140 L 138 105 Z" />
+          <!-- Greenland -->
+          <path d="M 355 55 Q 380 48 405 60 L 410 80 Q 400 95 380 95 L 360 88 L 352 72 Z" />
+          <!-- Central America -->
+          <path d="M 240 215 L 265 215 L 280 235 L 270 250 L 250 245 Z" />
+          <!-- South America -->
+          <path d="M 285 240 Q 308 230 335 245 L 350 270 L 355 305 L 345 340 L 325 365 L 305 370 Q 290 358 285 335 L 280 305 L 282 270 Z" />
+          <!-- Europe -->
+          <path d="M 470 95 Q 495 88 525 95 L 555 100 L 565 118 L 555 138 L 530 148 L 500 148 L 478 138 L 468 118 Z" />
+          <!-- UK / Ireland -->
+          <path d="M 478 108 L 490 108 L 494 125 L 484 132 L 475 122 Z" />
+          <!-- Africa -->
+          <path d="M 488 165 Q 510 158 540 162 L 570 175 L 588 200 L 595 235 L 588 270 L 570 300 L 545 318 L 520 315 L 498 295 L 488 265 L 480 230 L 482 195 Z" />
+          <!-- Madagascar -->
+          <path d="M 610 285 L 622 290 L 624 310 L 614 318 L 608 305 Z" />
+          <!-- Asia (Eurasia trunk) -->
+          <path d="M 555 88 Q 600 75 660 78 L 730 82 L 800 90 L 850 105 L 870 130 L 858 160 L 825 180 L 780 195 L 730 200 L 680 198 L 635 188 L 600 170 L 575 145 L 562 118 Z" />
+          <!-- South Asia / India -->
+          <path d="M 685 195 Q 705 200 725 210 L 730 235 L 718 255 L 700 252 L 690 230 Z" />
+          <!-- SE Asia / Indonesia -->
+          <path d="M 770 235 Q 800 230 835 240 L 855 252 L 845 265 L 815 268 L 785 260 L 770 250 Z" />
+          <!-- Philippines -->
+          <path d="M 850 230 L 862 232 L 862 248 L 852 250 Z" />
+          <!-- Japan -->
+          <path d="M 855 155 L 870 160 L 872 180 L 860 188 L 852 175 Z" />
+          <!-- Australia -->
+          <path d="M 815 305 Q 840 300 870 305 L 895 318 L 895 335 L 870 345 L 840 345 L 818 335 L 810 320 Z" />
+          <!-- New Zealand -->
+          <path d="M 905 355 L 918 360 L 920 375 L 908 378 Z" />
+        </g>
 
-    <!-- Plugin JavaScript -->
-    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+        <!-- Co-author country markers -->
+        <g id="mapMarkers"></g>
+      </svg>
 
-    <!-- Custom scripts for this template -->
-    <script src="js/stylish-portfolio.min.js"></script>
+      <div class="map-legend">
+        <div class="map-stats">
+          <div class="map-stat"><strong>32<span class="unit">+</span></strong>Countries</div>
+          <div class="map-stat"><strong>6</strong>Continents</div>
+          <div class="map-stat"><strong>200<span class="unit">+</span></strong>Co-authors</div>
+        </div>
+        <ul class="country-list" aria-label="Co-author countries">
+          <li>🇧🇷 Brazil</li><li>🇬🇧 UK</li><li>🇦🇺 Australia</li><li>🇺🇸 USA</li>
+          <li>🇮🇳 India</li><li>🇿🇦 South Africa</li><li>🇰🇪 Kenya</li><li>🇬🇭 Ghana</li>
+          <li>🇫🇷 France</li><li>🇩🇪 Germany</li><li>🇮🇩 Indonesia</li><li>🇸🇬 Singapore</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
 
+<!-- ============ PROJECTS ============ -->
+<section id="projects" style="background: var(--bg-elev);">
+  <div class="container">
+    <p class="section-label" data-reveal>04 — Projects</p>
+    <h2 data-reveal>Things I've built.</h2>
+    <p class="lead" style="max-width: 42rem; margin-bottom: var(--space-7);" data-reveal>
+      Open platforms, pipelines, and tools — most of them used in production by public-health
+      teams or in active research.
+    </p>
+
+    <div class="projects" data-reveal>
+
+      <article class="project featured">
+        <p class="project-status"><span class="dot"></span>Live · Flagship</p>
+        <h3><a href="https://www.amrnet.org" target="_blank" rel="noopener">AMRnet</a></h3>
+        <p class="project-desc">
+          A data-visualisation platform that turns thousands of pathogen genomes into interactive,
+          country-level dashboards of antimicrobial resistance. I lead the system architecture and
+          full-stack development — MERN + AWS, internationalised across multiple languages, and used by
+          surveillance teams from Africa to Latin America.
+        </p>
+        <div class="project-meta">
+          <span class="tag tag-accent">Lead engineer</span>
+          <span class="tag">React</span><span class="tag">Node</span><span class="tag">MongoDB</span><span class="tag">AWS</span><span class="tag">D3 / Recharts</span>
+        </div>
+        <div class="project-links">
+          <a href="https://www.amrnet.org" target="_blank" rel="noopener">Site →</a>
+          <a href="https://github.com/amrnet/amrnet" target="_blank" rel="noopener">Code</a>
+          <a href="https://doi.org/10.1093/nar/gkaf1101" target="_blank" rel="noopener">Paper</a>
+          <a href="https://amrnet.readthedocs.io" target="_blank" rel="noopener">Docs</a>
+        </div>
+      </article>
+
+      <article class="project featured">
+        <p class="project-status"><span class="dot"></span>Live · Co-coordinator</p>
+        <h3><a href="https://www.typhi.net" target="_blank" rel="noopener">TyphiNET</a></h3>
+        <p class="project-desc">
+          Open dashboard for <em>Salmonella</em> Typhi genomic surveillance, built on data from the
+          Global Typhoid Genomics Consortium. Wellcome- and EU-funded. Used to inform vaccine policy
+          decisions across countries with endemic typhoid.
+        </p>
+        <div class="project-meta">
+          <span class="tag tag-accent">Co-lead</span>
+          <span class="tag">React</span><span class="tag">Public health</span><span class="tag">Genotyping</span>
+        </div>
+        <div class="project-links">
+          <a href="https://www.typhi.net" target="_blank" rel="noopener">Site →</a>
+          <a href="https://github.com/typhoidgenomics/TyphiNET" target="_blank" rel="noopener">Code</a>
+          <a href="https://doi.org/10.1186/s13073-025-01470-4" target="_blank" rel="noopener">Paper</a>
+        </div>
+      </article>
+
+      <article class="project wide">
+        <p class="project-status"><span class="dot"></span>Live · Co-author</p>
+        <h3><a href="https://github.com/klebgenomics/Kleborate" target="_blank" rel="noopener">Kleborate</a></h3>
+        <p class="project-desc">
+          Open command-line tool for typing <em>Klebsiella pneumoniae</em> genomes — MLST, virulence,
+          AMR. The companion <em>Nature Communications</em> paper has been cited over 1,000 times.
+        </p>
+        <div class="project-meta">
+          <span class="tag">Python</span><span class="tag">Genotyping</span><span class="tag">CLI</span>
+        </div>
+        <div class="project-links">
+          <a href="https://github.com/klebgenomics/Kleborate" target="_blank" rel="noopener">Code →</a>
+          <a href="https://doi.org/10.1038/s41467-021-24448-3" target="_blank" rel="noopener">Paper</a>
+        </div>
+      </article>
+
+      <article class="project wide">
+        <p class="project-status"><span class="dot"></span>Live · Co-author</p>
+        <h3><a href="https://github.com/rrwick/Trycycler" target="_blank" rel="noopener">Trycycler</a></h3>
+        <p class="project-desc">
+          Consensus long-read assembler for bacterial genomes. Produces near-perfect chromosomes
+          from Nanopore and PacBio data. Widely adopted across the long-read assembly community.
+        </p>
+        <div class="project-meta">
+          <span class="tag">Python</span><span class="tag">Long-reads</span><span class="tag">Assembly</span>
+        </div>
+        <div class="project-links">
+          <a href="https://github.com/rrwick/Trycycler" target="_blank" rel="noopener">Code →</a>
+          <a href="https://doi.org/10.1186/s13059-021-02483-z" target="_blank" rel="noopener">Paper</a>
+        </div>
+      </article>
+
+      <article class="project standard">
+        <p class="project-status wip"><span class="dot"></span>In development</p>
+        <h3><a href="https://github.com/lcerdeira/dragon" target="_blank" rel="noopener">Dragon</a></h3>
+        <p class="project-desc">
+          A cloud-native, signal-aware aligner for surveillance-scale microbial genomics — BWT, FM-index,
+          coloured de Bruijn graphs, ML signal correction. Written in Rust, designed to fit on
+          commodity / edge hardware.
+        </p>
+        <div class="project-meta">
+          <span class="tag tag-warm">WIP</span>
+          <span class="tag">Rust</span><span class="tag">GPU</span>
+        </div>
+        <div class="project-links"><a href="https://github.com/lcerdeira/dragon" target="_blank" rel="noopener">Repo →</a></div>
+      </article>
+
+      <article class="project standard">
+        <p class="project-status wip"><span class="dot"></span>In development</p>
+        <h3><a href="https://github.com/lcerdeira/CNVRock" target="_blank" rel="noopener">CNVRock</a></h3>
+        <p class="project-desc">
+          Variational-autoencoder approach to AMR-gene copy-number variation across the
+          <em>K. pneumoniae</em> species complex. Where the resistance is, and how much of it.
+        </p>
+        <div class="project-meta">
+          <span class="tag tag-warm">WIP</span>
+          <span class="tag">Python</span><span class="tag">PyTorch</span>
+        </div>
+        <div class="project-links"><a href="https://github.com/lcerdeira/CNVRock" target="_blank" rel="noopener">Repo →</a></div>
+      </article>
+
+      <article class="project standard">
+        <p class="project-status"><span class="dot"></span>Live</p>
+        <h3><a href="https://www.infectonet.org" target="_blank" rel="noopener">InfectoNET</a></h3>
+        <p class="project-desc">
+          Genomic-epidemiology dashboard tracking emerging and re-emerging pathogens worldwide —
+          one platform, many threats. Built to make outbreak data legible to clinicians, public-health
+          teams, and the public.
+        </p>
+        <div class="project-meta">
+          <span class="tag tag-accent">Creator</span>
+          <span class="tag">TypeScript</span><span class="tag">Next.js</span>
+        </div>
+        <div class="project-links">
+          <a href="https://www.infectonet.org" target="_blank" rel="noopener">Site →</a>
+          <a href="https://github.com/lcerdeira/infectonet" target="_blank" rel="noopener">Code</a>
+        </div>
+      </article>
+
+      <article class="project standard">
+        <p class="project-status"><span class="dot"></span>Live</p>
+        <h3><a href="https://www.plasmidnet.org" target="_blank" rel="noopener">PlasmidNET</a></h3>
+        <p class="project-desc">
+          Interactive dashboard for exploring plasmid sequences across species — typing, AMR cargo,
+          mobility. Built on years of work on mobile genetic elements and the way resistance actually
+          travels between bugs.
+        </p>
+        <div class="project-meta">
+          <span class="tag tag-accent">Creator</span>
+          <span class="tag">Python</span><span class="tag">Dash</span>
+        </div>
+        <div class="project-links">
+          <a href="https://www.plasmidnet.org" target="_blank" rel="noopener">Site →</a>
+          <a href="https://github.com/lcerdeira/PlasmidNet" target="_blank" rel="noopener">Code</a>
+        </div>
+      </article>
+
+      <article class="project standard">
+        <p class="project-status"><span class="dot"></span>Live</p>
+        <h3><a href="https://github.com/lcerdeira/BraSeqTB" target="_blank" rel="noopener">BraSeqTB</a></h3>
+        <p class="project-desc">
+          A Nextflow pipeline for AMR detection in <em>Mycobacterium tuberculosis</em>, designed for
+          the Brazilian National TB Reference Network.
+        </p>
+        <div class="project-meta">
+          <span class="tag">Nextflow</span><span class="tag">TB</span>
+        </div>
+        <div class="project-links"><a href="https://github.com/lcerdeira/BraSeqTB" target="_blank" rel="noopener">Repo →</a></div>
+      </article>
+
+      <article class="project standard">
+        <p class="project-status"><span class="dot"></span>Live · Collaboration</p>
+        <h3><a href="https://github.com/lcerdeira/MINUUR" target="_blank" rel="noopener">MINUUR</a></h3>
+        <p class="project-desc">
+          Reproducible Snakemake pipeline that recovers metagenomic data from
+          <em>Aedes aegypti</em> whole-genome sequencing reads. With the Heinz Lab at LSTM.
+        </p>
+        <div class="project-meta">
+          <span class="tag">Snakemake</span><span class="tag">Metagenomics</span>
+        </div>
+        <div class="project-links">
+          <a href="https://github.com/lcerdeira/MINUUR" target="_blank" rel="noopener">Repo →</a>
+          <a href="https://doi.org/10.12688/wellcomeopenres.19155.2" target="_blank" rel="noopener">Paper</a>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ EXPERIENCE ============ -->
+<section id="experience" style="background: var(--bg-elev);">
+  <div class="container">
+    <p class="section-label" data-reveal>05 — Experience</p>
+    <h2 data-reveal>Career, briefly.</h2>
+
+    <ol class="timeline" data-reveal>
+      <li>
+        <p class="when">2023 — Present</p>
+        <h4 class="role"><span class="org">Lead Software Engineer · Computational Biologist</span></h4>
+        <p>System architecture and lead development of <a href="https://www.amrnet.org" target="_blank" rel="noopener">AMRnet</a>; co-coordinator of <a href="https://www.typhi.net" target="_blank" rel="noopener">TyphiNET</a>; design and launch of <a href="https://www.plasmidnet.org" target="_blank" rel="noopener">PlasmidNET</a> and <a href="https://www.infectonet.org" target="_blank" rel="noopener">InfectoNET</a>. Open science, internationalisation, multi-pathogen surveillance.</p>
+      </li>
+      <li>
+        <p class="when">2022 — 2023</p>
+        <h4 class="role"><span class="org">Postdoctoral Bioinformatician</span> · Vector Biology</h4>
+        <p><em>Wolbachia</em> endosymbionts, <em>Aedes</em> microbiome (MINUUR), MalariaGEN / PAMCA Anopheles genomic-surveillance training.</p>
+      </li>
+      <li>
+        <p class="when">2020 — 2022</p>
+        <h4 class="role"><span class="org">Research Software Engineer</span> · Infectious Diseases</h4>
+        <p>Built the initial TyphiNET dashboard; contributed to Kleborate and Trycycler. Australia.</p>
+      </li>
+      <li>
+        <p class="when">2015 — 2019</p>
+        <h4 class="role"><span class="org">University of São Paulo</span> · PhD in Sciences (with honourable mention)</h4>
+        <p>Comparative genomics of multidrug-resistant <em>K. pneumoniae</em> CG258 — IncQ1 plasmids, KPC-2 mobility. FAPESP-funded.</p>
+      </li>
+      <li>
+        <p class="when">2011 — 2015</p>
+        <h4 class="role"><span class="org">Professor & Senior Systems Analyst</span> · Brazil</h4>
+        <p>Earlier life as an academic computer scientist and IT engineer in Brazil — bridges that still inform how I build research software today.</p>
+      </li>
+      <li>
+        <p class="when">2009 — 2011</p>
+        <h4 class="role"><span class="org">Federal University of Pará</span> · MSc in Bioinformatics</h4>
+        <p>Where computer science met biology, and never let go.</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- ============ CODE (GitHub) ============ -->
+<section id="code">
+  <div class="container">
+    <p class="section-label" data-reveal>06 — Code</p>
+    <h2 data-reveal>Latest from GitHub.</h2>
+    <p class="lead" style="max-width: 42rem;" data-reveal>
+      A live feed of my most recently updated public repositories — bioinformatics, web tooling,
+      and occasional side quests.
+    </p>
+
+    <div class="repos" id="repos" data-reveal>
+      <div class="repos-loading">Loading repositories from github.com/lcerdeira…</div>
+    </div>
+
+    <p style="margin-top: var(--space-5);" data-reveal>
+      <a class="btn" href="https://github.com/lcerdeira" target="_blank" rel="noopener">All repositories on GitHub <span class="arrow">→</span></a>
+    </p>
+  </div>
+</section>
+
+<!-- ============ WRITING ============ -->
+<section id="writing" style="background: var(--bg-elev);">
+  <div class="container">
+    <p class="section-label" data-reveal>07 — Writing</p>
+    <h2 data-reveal>Notes from the lab and the editor.</h2>
+    <p class="lead" style="max-width: 42rem; margin-bottom: var(--space-7);" data-reveal>
+      Short essays on the things I actually think about — open science, software engineering for
+      research, and the weird shape of the field where they meet.
+    </p>
+
+    <div class="posts" data-reveal>
+      <a href="blog/amrnet-launch.html" class="post-card">
+        <span class="date">Jan 2026 · 6 min read</span>
+        <h4>What it took to ship AMRnet</h4>
+        <p>The years, the rewrites, the people. Lessons on building research software that actually
+          gets used.</p>
+        <span class="read-more">Read →</span>
+      </a>
+      <a href="blog/gpu-bioinformatics.html" class="post-card">
+        <span class="date">Mar 2026 · 9 min read</span>
+        <h4>Why I'm building a GPU aligner from scratch</h4>
+        <p>Genomic surveillance shouldn't require a HPC cluster. Notes on Dragon, FM-indices on GPU,
+          and edge bioinformatics.</p>
+        <span class="read-more">Read →</span>
+      </a>
+      <a href="blog/welcome.html" class="post-card">
+        <span class="date">May 2026 · 3 min read</span>
+        <h4>Hello, again</h4>
+        <p>Reintroducing myself, the site, and the strange continuity between a PhD in São Paulo and
+          a dashboard in London.</p>
+        <span class="read-more">Read →</span>
+      </a>
+    </div>
+
+    <p style="margin-top: var(--space-7);" data-reveal>
+      <a class="btn" href="blog.html">All posts <span class="arrow">→</span></a>
+    </p>
+  </div>
+</section>
+
+<!-- ============ CREATIVE ============ -->
+<section id="creative">
+  <div class="container">
+    <p class="section-label" data-reveal>08 — Off the clock</p>
+    <h2 data-reveal>Photography, poems, and a podcast.</h2>
+    <p class="lead" style="max-width: 42rem; margin-bottom: var(--space-7);" data-reveal>
+      Outside the terminal I keep a camera, a notebook, and a microphone within reach. Some of what
+      that produces ends up here.
+    </p>
+
+    <div class="creative-grid" style="margin-bottom: var(--space-7);" data-reveal>
+      <a class="creative-card" href="#creative" aria-label="Photography portfolio">
+        <img src="assets/images/portfolio/motorcycle.jpg" alt="Photography sample — motorcycle" loading="lazy" />
+        <div class="caption">
+          <span class="label">Photography</span>
+          <h4>Light, weather, and rides</h4>
+        </div>
+      </a>
+      <a class="creative-card" href="#creative" aria-label="Cooking gallery">
+        <img src="assets/images/portfolio/cooking.jpg" alt="Photography sample — cooking" loading="lazy" />
+        <div class="caption">
+          <span class="label">Stories</span>
+          <h4>What I cook, mostly Brazilian</h4>
+        </div>
+      </a>
+      <a class="creative-card" href="#creative" aria-label="Music">
+        <img src="assets/images/portfolio/music.jpg" alt="Photography sample — music" loading="lazy" />
+        <div class="caption">
+          <span class="label">Music & travel</span>
+          <h4>The soundtrack to all of this</h4>
+        </div>
+      </a>
+    </div>
+
+    <div class="grid grid-2" data-reveal>
+      <div>
+        <h3>Watch / Listen</h3>
+        <ul class="media-list">
+          <li>
+            <span class="label">YouTube · LuLu Channel</span>
+            <h4>Science, in plain Portuguese (and a little English)</h4>
+            <p>Short videos on what I'm working on, what I just read, and how to actually run a pipeline.
+              <em class="text-faint">[TODO — add channel URL]</em></p>
+          </li>
+          <li>
+            <span class="label">Podcast · A Popcorn Called Wilson</span>
+            <h4>Long-form conversations on science and the rest</h4>
+            <p>A side project with friends — bioinformatics, books, film, life in academia.
+              <em class="text-faint">[TODO — add podcast URL]</em></p>
+          </li>
+        </ul>
+      </div>
+
+      <div>
+        <h3>A featured talk</h3>
+        <div class="video-embed">
+          <!-- Replace with real embed when YouTube URL is provided -->
+          <div>
+            <p class="text-mono text-faint" style="margin-bottom: var(--space-3);">[TODO]</p>
+            <p style="font-size: var(--fs-sm); margin: 0;">Drop a YouTube ID in <code>index.html</code> and an iframe will load here.</p>
+          </div>
+        </div>
+        <p class="text-faint text-mono" style="font-size: var(--fs-xs); text-transform: uppercase; letter-spacing: 0.12em; margin-top: var(--space-3);">Conference talks · workshops · interviews</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section id="contact" style="background: var(--bg-elev);">
+  <div class="container">
+    <div class="contact-card">
+      <p class="section-label" style="justify-content: center; margin-left: auto; margin-right: auto;">09 — Get in touch</p>
+      <h2>Let's build something useful.</h2>
+      <p class="lead">
+        Open to collaborations on genomic surveillance, AMR, public-health platforms, and bioinformatics
+        software. Always happy to talk to students considering computational biology.
+      </p>
+      <div class="contact-actions">
+        <a class="btn btn-primary" href="mailto:louise.cerdeira@gmail.com">Email me <span class="arrow">→</span></a>
+        <a class="btn" href="https://drive.google.com/file/d/173mmYaLHkCr6_1VdgiljdM5AOPPSfknB/view?usp=sharing" target="_blank" rel="noopener">Download CV</a>
+      </div>
+
+      <div class="socials" aria-label="Social profiles">
+        <a class="social" href="https://github.com/lcerdeira" target="_blank" rel="noopener" aria-label="GitHub">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.55v-2.02c-3.2.69-3.87-1.36-3.87-1.36-.52-1.34-1.28-1.7-1.28-1.7-1.05-.71.08-.7.08-.7 1.16.08 1.77 1.2 1.77 1.2 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.47.11-3.06 0 0 .97-.31 3.17 1.18a11.04 11.04 0 0 1 5.76 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.77.11 3.06.74.81 1.19 1.84 1.19 3.1 0 4.42-2.69 5.39-5.26 5.68.41.36.78 1.07.78 2.15v3.19c0 .31.21.67.8.55C20.21 21.38 23.5 17.08 23.5 12 23.5 5.65 18.35.5 12 .5Z"/></svg>
+        </a>
+        <a class="social" href="https://www.linkedin.com/in/louisecerdeira" target="_blank" rel="noopener" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5ZM3 9h4v12H3V9Zm7 0h3.8v1.71h.05c.53-1 1.83-2.06 3.77-2.06C21.5 8.65 22 11 22 14.06V21h-4v-6.27c0-1.5-.03-3.43-2.09-3.43-2.09 0-2.41 1.63-2.41 3.32V21h-4V9Z"/></svg>
+        </a>
+        <a class="social" href="https://x.com/LouiseCerdeira" target="_blank" rel="noopener" aria-label="X / Twitter">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2H21l-6.514 7.444L22 22h-6.49l-5.082-6.66L4.6 22H2l6.97-7.96L1.5 2h6.64l4.59 6.07L18.244 2Zm-1.137 18h1.59L7 4H5.327l11.78 16Z"/></svg>
+        </a>
+        <a class="social" href="https://bsky.app/profile/louisecerdeira.bsky.social" target="_blank" rel="noopener" aria-label="Bluesky">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.5 4C3.8 6.7 3 10 3 12.5c0 2.6 2 4.2 4.5 4.2 1.4 0 2.6-.4 3.5-1.3.4-.4.6-1 .6-1.5l.4-1.6.4 1.6c0 .5.2 1.1.6 1.5.9.9 2.1 1.3 3.5 1.3 2.5 0 4.5-1.6 4.5-4.2 0-2.5-.8-5.8-3.5-8.5C16.5 7.5 13.6 11 12 13 10.4 11 7.5 7.5 6.5 4Z"/></svg>
+        </a>
+        <a class="social" href="https://scholar.google.com/citations?user=O2dcz5MAAAAJ" target="_blank" rel="noopener" aria-label="Google Scholar">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2 1 9l11 7 9-5.7V17h2V9l-11-7Zm0 12-6-3.8v3.4C6 16.6 8.7 18 12 18s6-1.4 6-4.4v-3.4L12 14Z"/></svg>
+        </a>
+        <a class="social" href="https://orcid.org/0000-0002-4495-2615" target="_blank" rel="noopener" aria-label="ORCID">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.6 0 12 0ZM7.4 17.7H5.6V7.6h1.8v10.1ZM6.5 6.4a1.1 1.1 0 1 1 0-2.2 1.1 1.1 0 0 1 0 2.2Zm12.2 6.3c0 3.2-2.3 5-5.4 5h-3.9V7.6h3.9c3.5 0 5.4 2.1 5.4 5.1Zm-5.6-3.5h-1.9v6.9h1.9c2.5 0 3.7-1.3 3.7-3.4 0-2.3-1.5-3.5-3.7-3.5Z"/></svg>
+        </a>
+        <a class="social" href="mailto:louise.cerdeira@gmail.com" aria-label="Email">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><polyline points="3 7 12 13 21 7"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+  <div class="container footer-inner">
+    <p>© <span id="year">2026</span> · Dr. Louise Cerdeira · Made with ☕ in London</p>
+    <p><a href="#top">Back to top ↑</a></p>
+  </div>
+</footer>
+
+<script src="assets/js/main.js" defer></script>
 </body>
-
 </html>
