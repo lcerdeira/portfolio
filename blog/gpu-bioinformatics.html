@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Why I'm building a GPU aligner from scratch — Dr. Louise Cerdeira</title>
+  <meta name="description" content="Genomic surveillance shouldn't require an HPC cluster. Notes on Dragon, FM-indices on GPU, and edge bioinformatics for low- and middle-income countries." />
+  <link rel="canonical" href="https://lcerdeira.github.io/portfolio/blog/gpu-bioinformatics.html" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Why I'm building a GPU aligner from scratch" />
+  <meta property="og:description" content="Genomic surveillance shouldn't require an HPC cluster. Notes on Dragon, FM-indices on GPU, and edge bioinformatics." />
+  <meta property="og:url" content="https://lcerdeira.github.io/portfolio/blog/gpu-bioinformatics.html" />
+  <meta property="article:author" content="Louise Cerdeira" />
+  <meta property="article:published_time" content="2026-03-22" />
+  <meta property="article:tag" content="GPU" />
+  <meta property="article:tag" content="alignment" />
+  <meta property="article:tag" content="Rust" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="theme-color" content="#fff7ec" />
+
+  <link rel="icon" type="image/svg+xml" href="../assets/images/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Newsreader:ital,wght@0,400;0,500;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../assets/css/main.css" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Why I'm building a GPU aligner from scratch",
+    "author": { "@type": "Person", "name": "Dr. Louise Cerdeira" },
+    "datePublished": "2026-03-22",
+    "url": "https://lcerdeira.github.io/portfolio/blog/gpu-bioinformatics.html"
+  }
+  </script>
+</head>
+<body id="top">
+
+<header class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="../index.html" class="nav-brand"><span class="dot" aria-hidden="true"></span>Louise Cerdeira</a>
+    <nav aria-label="Primary">
+      <ul class="nav-links" id="navLinks">
+        <li><a href="../index.html#about">About</a></li>
+        <li><a href="../index.html#research">Research</a></li>
+        <li><a href="../index.html#projects">Projects</a></li>
+        <li><a href="../blog.html">Writing</a></li>
+        <li><a href="../index.html#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="nav-actions">
+      <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle colour theme">
+        <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41" stroke-linecap="round"/></svg>
+      </button>
+      <button class="nav-toggle" id="navToggle" type="button" aria-label="Toggle menu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<section class="post-page">
+  <div class="container-narrow">
+    <a href="../blog.html" class="post-back">← All posts</a>
+    <article>
+      <h1>Why I'm building a GPU aligner from scratch</h1>
+      <div class="post-meta">
+        <span>March 22, 2026</span><span>9 min read</span><span>Dragon · GPU · Rust</span>
+      </div>
+
+      <p>Here is a sentence I have said too many times, in too many conference rooms:</p>
+
+      <blockquote>
+        "We can do it, but the lab needs a cluster, or at least a workstation."
+      </blockquote>
+
+      <p>Most of the labs I work with don't have a cluster. Some don't reliably have power.
+        <em>"Just spin up an EC2 instance"</em> is not the universally available answer that the
+        cloud-native cohort sometimes imagines it is.</p>
+
+      <p>So I'm building an aligner. From scratch. In Rust. On the GPU. It is called
+        <a href="https://github.com/lcerdeira/dragon" target="_blank" rel="noopener">Dragon</a> and
+        this is the long version of why.</p>
+
+      <h2>The premise</h2>
+
+      <p>For most surveillance work — pathogen identification, MLST typing, AMR-gene calling,
+        plasmid profiling, lineage assignment — you don't need a human-genome-grade aligner.
+        You need a <strong>microbial-genome-grade aligner</strong>: small references, short or
+        long reads, a few key downstream questions ("does this read map within this gene?",
+        "with what identity?"), tolerance for repeats, and excellent throughput on modest
+        hardware.</p>
+
+      <p>Tools like minimap2 and BWA are excellent and I use them daily. But they were designed
+        for a different default machine — one with plenty of RAM, plenty of cores, and no
+        graphics card asking to help. Most modern field-deployable rigs come with a GPU even when
+        they don't come with much else; the M-series Macs sitting in many labs around the world
+        have astonishing compute density that is, in bioinformatics terms, sitting idle.</p>
+
+      <h2>What Dragon is trying to be</h2>
+
+      <p>Three properties, in order:</p>
+
+      <ol>
+        <li><strong>Surveillance-shaped.</strong> The default workload is "take a folder of FASTQs,
+          align them to a reference panel of microbial genomes plus AMR-gene database, return a
+          structured report." Not "be a general-purpose aligner."</li>
+        <li><strong>GPU-native, but CPU-correct.</strong> Same code paths, same answers, on a GPU
+          or without one. A user with only a laptop should not get a degraded analysis; they should
+          just wait longer.</li>
+        <li><strong>One static binary.</strong> No conda environment, no Docker, no Snakemake
+          version pinning. Drop it on a USB stick and run it.</li>
+      </ol>
+
+      <h2>The interesting technical bits</h2>
+
+      <h3>FM-index on a GPU</h3>
+
+      <p>The FM-index is the data structure underneath BWA and bowtie. It's what lets you do
+        exact-match lookups in O(read length) without having to scan the reference. It's a
+        beautiful data structure that was designed in 2000, before GPUs were anything most
+        bioinformaticians thought about. People have ported it before, but the public
+        implementations tend to either (a) optimise the small-reference case at the cost of the
+        big-reference case, or (b) require frameworks that are themselves operationally heavy
+        (CUDA-specific toolchains, large model runtimes).</p>
+
+      <p>Dragon's FM-index is built on top of <code>wgpu</code> in Rust, which means it runs on
+        Vulkan, Metal, DirectX, and OpenGL backends. So the same binary that runs on a Linux
+        workstation runs on an M3 MacBook. We pay a small performance tax for that abstraction.
+        We make it back through aggressive batching: most surveillance pipelines align hundreds
+        of thousands of reads to the same reference; we keep the index resident on the device and
+        amortise the upload.</p>
+
+      <h3>Coloured de Bruijn graphs</h3>
+
+      <p>For mixed-species and metagenomic samples — increasingly the norm for environmental
+        surveillance — we use a coloured de Bruijn graph index over the reference panel. Each
+        k-mer has a colour vector saying which references contain it. The query becomes "for each
+        k-mer in the read, what's the most likely reference?" which has nice GPU-shaped
+        properties (lots of independent lookups, parallel reductions).</p>
+
+      <h3>Signal awareness</h3>
+
+      <p>Where things get interesting is in the third pillar: <strong>signal-aware</strong> alignment.
+        For Nanopore data we have access to the raw squiggle, not just the basecall. We are
+        experimenting with a small ML model that, when a read aligns ambiguously, looks at the
+        raw signal at the disagreement positions and breaks the tie. The model is small — small
+        enough to ship in the binary, small enough to run on the same GPU as the aligner without
+        a context switch.</p>
+
+      <h2>Why Rust</h2>
+
+      <p>Three reasons.</p>
+
+      <p>Memory safety, which I have come to consider non-negotiable for tools that are going
+        to be used in clinical or surveillance contexts. Cross-compilation, which is necessary
+        for the one-static-binary promise. And, honestly, the package ecosystem. <code>wgpu</code>,
+        <code>rayon</code>, <code>noodles</code>, <code>needletail</code> — the building blocks
+        are good.</p>
+
+      <p>I would not have made the same choice five years ago. The ecosystem wasn't there. It is now.</p>
+
+      <h2>Where it is</h2>
+
+      <p>Dragon is pre-alpha. The exact-match FM-index path works and is competitive with BWA for
+        bacterial-reference workloads. The approximate-match path is the next month of work. The
+        signal-aware ML correction is a parallel research project that may or may not survive
+        contact with reality.</p>
+
+      <p>I'll write a follow-up when there's something to benchmark publicly. If you want to follow
+        development, the repo is at <a href="https://github.com/lcerdeira/dragon" target="_blank" rel="noopener">github.com/lcerdeira/dragon</a>
+        and I'm happy to answer questions.</p>
+
+      <h2>The bigger point</h2>
+
+      <p>The thing I want to argue, more than the technical specifics, is that <strong>the geography
+        of compute matters</strong>. A genomic-surveillance system that works only on machines that
+        exist in a handful of well-funded labs is, by construction, a partial system. We have been
+        too comfortable with that for too long.</p>
+
+      <p>Dragon is one small move against that. Probably it will fail in interesting ways. That,
+        too, is fine. The point is to try.</p>
+
+      <p>— Louise</p>
+    </article>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container footer-inner">
+    <p>© <span id="year">2026</span> · Dr. Louise Cerdeira</p>
+    <p><a href="../blog.html">← Writing index</a></p>
+  </div>
+</footer>
+
+<script src="../assets/js/main.js" defer></script>
+</body>
+</html>

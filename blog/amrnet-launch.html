@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>What it took to ship AMRnet — Dr. Louise Cerdeira</title>
+  <meta name="description" content="The years, the rewrites, the people. Lessons on building research software that actually gets used — from the engineer behind AMRnet." />
+  <link rel="canonical" href="https://lcerdeira.github.io/portfolio/blog/amrnet-launch.html" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="What it took to ship AMRnet" />
+  <meta property="og:description" content="The years, the rewrites, the people. Lessons on building research software that actually gets used." />
+  <meta property="og:url" content="https://lcerdeira.github.io/portfolio/blog/amrnet-launch.html" />
+  <meta property="article:author" content="Louise Cerdeira" />
+  <meta property="article:published_time" content="2026-01-15" />
+  <meta property="article:tag" content="AMR" />
+  <meta property="article:tag" content="bioinformatics" />
+  <meta property="article:tag" content="research software" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="theme-color" content="#fff7ec" />
+
+  <link rel="icon" type="image/svg+xml" href="../assets/images/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Newsreader:ital,wght@0,400;0,500;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../assets/css/main.css" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "What it took to ship AMRnet",
+    "author": { "@type": "Person", "name": "Dr. Louise Cerdeira" },
+    "datePublished": "2026-01-15",
+    "url": "https://lcerdeira.github.io/portfolio/blog/amrnet-launch.html",
+    "about": ["AMRnet", "antimicrobial resistance", "genomic surveillance"]
+  }
+  </script>
+</head>
+<body id="top">
+
+<header class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="../index.html" class="nav-brand"><span class="dot" aria-hidden="true"></span>Louise Cerdeira</a>
+    <nav aria-label="Primary">
+      <ul class="nav-links" id="navLinks">
+        <li><a href="../index.html#about">About</a></li>
+        <li><a href="../index.html#research">Research</a></li>
+        <li><a href="../index.html#projects">Projects</a></li>
+        <li><a href="../blog.html">Writing</a></li>
+        <li><a href="../index.html#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="nav-actions">
+      <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle colour theme">
+        <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41" stroke-linecap="round"/></svg>
+      </button>
+      <button class="nav-toggle" id="navToggle" type="button" aria-label="Toggle menu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<section class="post-page">
+  <div class="container-narrow">
+    <a href="../blog.html" class="post-back">← All posts</a>
+    <article>
+      <h1>What it took to ship AMRnet</h1>
+      <div class="post-meta">
+        <span>January 15, 2026</span><span>6 min read</span><span>AMRnet · Research software</span>
+      </div>
+
+      <p>The paper went live in <em>Nucleic Acids Research</em> on January 6, 2026. A few people
+        emailed to say congratulations. A larger number emailed to ask whether <em>their</em>
+        country's data was in there yet, and how soon we could add it. That is, I have come to
+        believe, the right ratio.</p>
+
+      <p>This is a short post about what it actually took to get <a href="https://www.amrnet.org" target="_blank" rel="noopener">AMRnet</a>
+        from a vague idea ("there should be one place to see AMR genomic data, ideally one that loads
+        in under three seconds") to a platform that gets used by surveillance teams, ministries, and
+        researchers across multiple continents.</p>
+
+      <h2>What AMRnet is</h2>
+
+      <p>AMRnet is an open, interactive dashboard for exploring antimicrobial-resistance variation
+        across the WHO priority pathogens — <em>Klebsiella pneumoniae</em>, <em>Salmonella</em> Typhi,
+        non-typhoidal <em>Salmonella</em>, <em>E. coli</em>, <em>Pseudomonas aeruginosa</em>,
+        <em>Acinetobacter baumannii</em>, <em>Mycobacterium tuberculosis</em>. You pick a pathogen,
+        a country, a date range; you see what's circulating, what's resistant, what the genomic
+        markers look like. You can drill down to specific genes, plasmids, lineages.</p>
+
+      <p>It's built on top of the genomic-typing tools the community already trusts — Kleborate,
+        Pathogenwatch, the Global Typhoid Genomics Consortium pipelines — plus a bespoke ingest layer
+        that takes their outputs and turns them into the dashboards you see on the site.</p>
+
+      <h2>Three things that turned out to matter more than I expected</h2>
+
+      <h3>1. Internationalisation, before features</h3>
+
+      <p>Most genomic-surveillance dashboards I've seen are English-first. AMRnet is used heavily in
+        Brazil, India, sub-Saharan Africa, and Southeast Asia. If your interface doesn't speak the
+        language of the person trying to use it on a Tuesday afternoon in a regional reference lab,
+        the data doesn't reach them. We wired in <code>react-i18next</code> from the second sprint, and
+        I have not regretted it once. The cost is small. The reach is large.</p>
+
+      <h3>2. Data plumbing is the product</h3>
+
+      <p>People talk about dashboards in terms of charts. The actual work, the work that took two
+        years, is the plumbing behind the charts: getting clean, standardised, dated, geocoded,
+        typed, sometimes-corrected genomic metadata into one place. Most of the engineering complexity
+        of AMRnet is not the React; it's the ingest. If you want a useful surveillance product, plan
+        for that. Budget for it. Hire for it.</p>
+
+      <h3>3. The dashboard is not the thing. The conversation is the thing.</h3>
+
+      <p>Every chart on AMRnet has been changed at least once because a microbiologist or
+        epidemiologist looked at it and said something like, <em>"that legend is misleading"</em> or
+        <em>"why is the y-axis log-scale by default?"</em> or, more often, <em>"I think this number
+        is actually wrong, let me show you why."</em> Build the cycle. Make it short. Take the criticism
+        seriously. The version of the platform that exists today is several worlds away from the
+        version we showed the first user group in 2023.</p>
+
+      <h2>What I'd do differently</h2>
+
+      <p>Two things, mostly.</p>
+
+      <p>I'd invest earlier in observability. We spent the first year flying blind on real-world
+        usage and missed several quietly-broken filters because nobody happened to email about them.
+        Modest analytics — privacy-respecting, aggregated — would have saved months of speculation.</p>
+
+      <p>And I'd separate the data layer from the dashboard layer harder, sooner. AMRnet's data is
+        useful to people who don't want our charts; they want our normalised, deduplicated AMR-typing
+        outputs in their own pipelines. That's now a roadmap item. It should have been an architectural
+        principle on day one.</p>
+
+      <h2>Who actually did this</h2>
+
+      <p>I'm the lead software engineer; the platform isn't mine. It is Kat Holt's vision, Zoe Dyson's
+        and Megan Carey's epidemiology brain, Vandana Sharma's data work, Mary Maranga and Ebenezer
+        Foster-Nyarko's ingest work, and the typhoid and <em>Klebsiella</em> genomics communities'
+        decade of upstream pipeline-building. Naming everyone properly is in the paper. The thing I
+        want to say here is: research software is not a solo achievement. The reason this one shipped
+        is that the team is unusually good at giving and receiving feedback, and unusually patient
+        with each other.</p>
+
+      <h2>If you want to use AMRnet</h2>
+
+      <ul>
+        <li>Visit <a href="https://www.amrnet.org" target="_blank" rel="noopener">amrnet.org</a> — no
+          login, no paywall, no waiting list.</li>
+        <li>Cite us: <a href="https://doi.org/10.1093/nar/gkaf1101" target="_blank" rel="noopener">10.1093/nar/gkaf1101</a></li>
+        <li>If you have surveillance data and want to be added — <a href="../index.html#contact">email me</a>. We're set up for it.</li>
+      </ul>
+
+      <p>More posts coming on the technical side — how we model genotype-to-AMR-prediction
+        relationships, why we picked MongoDB (for now), how the language pipeline works, why we
+        haven't moved off MERN even though everyone keeps asking. Subscribe to nothing, just check
+        back.</p>
+
+      <p>— Louise</p>
+    </article>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container footer-inner">
+    <p>© <span id="year">2026</span> · Dr. Louise Cerdeira</p>
+    <p><a href="../blog.html">← Writing index</a></p>
+  </div>
+</footer>
+
+<script src="../assets/js/main.js" defer></script>
+</body>
+</html>
