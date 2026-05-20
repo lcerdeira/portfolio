@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://lcerdeira.github.io/portfolio/sitemap.xml
+Sitemap: https://www.louisecerdeira.com/sitemap.xml

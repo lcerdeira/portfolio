@@ -1,29 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://lcerdeira.github.io/portfolio/</loc>
+    <loc>https://www.louisecerdeira.com/</loc>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://lcerdeira.github.io/portfolio/blog.html</loc>
+    <loc>https://www.louisecerdeira.com/blog.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://lcerdeira.github.io/portfolio/blog/welcome.html</loc>
+    <loc>https://www.louisecerdeira.com/blog/welcome.html</loc>
     <lastmod>2026-05-01</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://lcerdeira.github.io/portfolio/blog/amrnet-launch.html</loc>
+    <loc>https://www.louisecerdeira.com/blog/amrnet-launch.html</loc>
     <lastmod>2026-01-15</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://lcerdeira.github.io/portfolio/blog/gpu-bioinformatics.html</loc>
+    <loc>https://www.louisecerdeira.com/blog/gpu-bioinformatics.html</loc>
     <lastmod>2026-03-22</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
