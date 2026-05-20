@@ -1,10 +1,10 @@
-# lcerdeira.github.io · Portfolio
+# louisecerdeira.com · Portfolio
 
 Personal portfolio site of **Dr. Louise Cerdeira** — computational biologist and software
 engineer behind [AMRnet](https://www.amrnet.org), [TyphiNET](https://www.typhi.net),
 [PlasmidNET](https://www.plasmidnet.org), and [InfectoNET](https://www.infectonet.org).
 
-Live: <https://lcerdeira.github.io/portfolio/>
+Live: <https://www.louisecerdeira.com/>
 
 ![License](https://img.shields.io/badge/license-MIT-ff6b8a)
 ![Build](https://img.shields.io/badge/build-static-4ecdc4)
