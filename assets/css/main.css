@@ -1280,10 +1280,6 @@ section { padding: var(--space-9) 0; position: relative; }
 
 /* ---------- 22a. Featured book / monograph ---------- */
 .book-card {
-  display: grid;
-  grid-template-columns: 200px 1fr;
-  gap: var(--space-6);
-  align-items: center;
   padding: var(--space-6);
   margin-top: var(--space-7);
   border: 1px solid var(--border);
@@ -1294,64 +1290,11 @@ section { padding: var(--space-9) 0; position: relative; }
     var(--bg-elev);
   position: relative;
   overflow: hidden;
+  transition: border-color var(--dur) var(--ease), transform var(--dur) var(--ease);
 }
-@media (max-width: 720px) {
-  .book-card { grid-template-columns: 1fr; }
-  .book-cover { justify-self: center; }
-}
-
-.book-cover {
-  position: relative;
-  width: 200px; height: 280px;
-  perspective: 800px;
-  filter: drop-shadow(0 12px 24px rgba(45, 27, 78, 0.18));
-  transition: transform var(--dur) var(--ease);
-}
-.book-cover:hover { transform: translateY(-4px) rotate(-1deg); }
-.book-cover-inner {
-  position: absolute;
-  inset: 0;
-  border-radius: 4px 8px 8px 4px;
-  background:
-    linear-gradient(135deg, var(--accent-warm) 0%, var(--accent) 50%, var(--accent-4) 100%);
-  color: #fff;
-  padding: var(--space-5) var(--space-4) var(--space-4) var(--space-5);
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  transform: rotateY(-6deg);
-  transform-origin: left center;
-}
-.book-cover-eyebrow {
-  font-family: var(--font-mono);
-  font-size: 0.6rem;
-  text-transform: uppercase;
-  letter-spacing: 0.2em;
-  opacity: 0.85;
-}
-.book-cover-title {
-  font-family: var(--font-serif);
-  font-size: 1.55rem;
-  font-weight: 500;
-  line-height: 1.05;
-  letter-spacing: -0.01em;
-}
-.book-cover-title em { font-style: italic; opacity: 0.92; }
-.book-cover-author {
-  font-family: var(--font-sans);
-  font-size: 0.75rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  opacity: 0.9;
-}
-.book-spine {
-  position: absolute;
-  left: 0; top: 0; bottom: 0;
-  width: 6px;
-  background: linear-gradient(to right, rgba(0,0,0,0.25), transparent);
-  border-radius: 4px 0 0 4px;
-  transform: rotateY(-6deg);
-  transform-origin: left center;
+.book-card:hover {
+  border-color: var(--accent-warm);
+  transform: translateY(-2px);
 }
 
 .book-label {
