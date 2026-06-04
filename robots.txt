@@ -1,4 +1,20 @@
 User-agent: *
 Allow: /
+Disallow: /assets/images/og-image.png
+
+# Be explicit-friendly for AI crawlers that respect robots
+User-agent: GPTBot
+Allow: /
+User-agent: ChatGPT-User
+Allow: /
+User-agent: PerplexityBot
+Allow: /
+User-agent: Google-Extended
+Allow: /
+User-agent: ClaudeBot
+Allow: /
+User-agent: anthropic-ai
+Allow: /
 
 Sitemap: https://www.louisecerdeira.com/sitemap.xml
+Host: https://www.louisecerdeira.com

@@ -15,6 +15,43 @@
   <meta name="theme-color" content="#1a1428" media="(prefers-color-scheme: dark)" />
   <meta name="robots" content="index, follow, max-image-preview:large" />
 
+  <!-- Search engine verification — paste your codes between the quotes when you get them.
+       Google Search Console: https://search.google.com/search-console
+       Bing Webmaster Tools:  https://www.bing.com/webmasters
+       Yandex Webmaster:      https://webmaster.yandex.com -->
+  <!-- <meta name="google-site-verification" content="PASTE_GOOGLE_CODE_HERE" /> -->
+  <!-- <meta name="msvalidate.01" content="PASTE_BING_CODE_HERE" /> -->
+  <!-- <meta name="yandex-verification" content="PASTE_YANDEX_CODE_HERE" /> -->
+
+  <!-- RSS feed -->
+  <link rel="alternate" type="application/rss+xml" title="Dr. Louise Cerdeira — Writing" href="/feed.xml" />
+
+  <!-- rel=me for IndieWeb / Mastodon / social verification -->
+  <link rel="me" href="https://github.com/lcerdeira" />
+  <link rel="me" href="https://www.linkedin.com/in/louisecerdeira" />
+  <link rel="me" href="https://x.com/LouiseCerdeira" />
+  <link rel="me" href="https://bsky.app/profile/louisecerdeira.bsky.social" />
+  <link rel="me" href="https://orcid.org/0000-0002-4495-2615" />
+  <link rel="me" href="https://scholar.google.com/citations?user=O2dcz5MAAAAJ" />
+  <link rel="me" href="mailto:louise.cerdeira@gmail.com" />
+
+  <!-- Google Scholar / academic indexing -->
+  <meta name="citation_author" content="Cerdeira, Louise Teixeira" />
+  <meta name="citation_author_orcid" content="0000-0002-4495-2615" />
+  <meta name="citation_author_institution" content="Independent" />
+
+  <!-- Dublin Core (academic metadata) -->
+  <meta name="DC.title" content="Dr. Louise Cerdeira — Computational Biologist & Software Engineer" />
+  <meta name="DC.creator" content="Louise Teixeira Cerdeira" />
+  <meta name="DC.subject" content="Bioinformatics; Computational Biology; Genomic Surveillance; Antimicrobial Resistance; One Health" />
+  <meta name="DC.description" content="Portfolio of Dr. Louise Cerdeira — creator of AMRnet, TyphiNET, PlasmidNET, and InfectoNET." />
+  <meta name="DC.publisher" content="Dr. Louise Cerdeira" />
+  <meta name="DC.type" content="InteractiveResource" />
+  <meta name="DC.format" content="text/html" />
+  <meta name="DC.identifier" content="https://www.louisecerdeira.com/" />
+  <meta name="DC.language" content="en" />
+  <meta name="DC.rights" content="© Dr. Louise Cerdeira" />
+
   <!-- Open Graph -->
   <meta property="og:type" content="profile" />
   <meta property="og:locale" content="en_GB" />
@@ -106,7 +143,84 @@
     "url": "https://www.louisecerdeira.com/",
     "name": "Dr. Louise Cerdeira — Portfolio",
     "author": { "@type": "Person", "name": "Dr. Louise Cerdeira" },
-    "inLanguage": "en"
+    "inLanguage": "en",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://www.google.com/search?q=Louise+Cerdeira+{search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
+  }
+  </script>
+
+  <!-- JSON-LD: ProfilePage (Google rich result type for personal sites) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfilePage",
+    "dateModified": "2026-06-04",
+    "mainEntity": {
+      "@type": "Person",
+      "name": "Dr. Louise Cerdeira",
+      "alternateName": "Louise Teixeira Cerdeira",
+      "honorificPrefix": "Dr.",
+      "image": "https://www.louisecerdeira.com/assets/images/profile.jpg",
+      "jobTitle": "Computational Biologist & Lead Software Engineer",
+      "url": "https://www.louisecerdeira.com/",
+      "sameAs": [
+        "https://github.com/lcerdeira",
+        "https://www.linkedin.com/in/louisecerdeira",
+        "https://x.com/LouiseCerdeira",
+        "https://bsky.app/profile/louisecerdeira.bsky.social",
+        "https://orcid.org/0000-0002-4495-2615",
+        "https://scholar.google.com/citations?user=O2dcz5MAAAAJ"
+      ],
+      "description": "Computational biologist and software engineer building open platforms (AMRnet, TyphiNET, PlasmidNET, InfectoNET) for genomic surveillance of antimicrobial resistance."
+    }
+  }
+  </script>
+
+  <!-- JSON-LD: Featured creative works -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "SoftwareApplication",
+        "name": "AMRnet",
+        "url": "https://www.amrnet.org",
+        "applicationCategory": "Bioinformatics platform",
+        "operatingSystem": "Web",
+        "author": { "@type": "Person", "name": "Dr. Louise Cerdeira" },
+        "description": "Open data-visualisation platform for antimicrobial-resistance variants."
+      },
+      {
+        "@type": "SoftwareApplication",
+        "name": "TyphiNET",
+        "url": "https://www.typhi.net",
+        "applicationCategory": "Bioinformatics platform",
+        "operatingSystem": "Web",
+        "author": { "@type": "Person", "name": "Dr. Louise Cerdeira" },
+        "description": "Open Salmonella Typhi genomic surveillance dashboard."
+      },
+      {
+        "@type": "SoftwareApplication",
+        "name": "PlasmidNET",
+        "url": "https://www.plasmidnet.org",
+        "applicationCategory": "Bioinformatics platform",
+        "operatingSystem": "Web",
+        "author": { "@type": "Person", "name": "Dr. Louise Cerdeira" },
+        "description": "Interactive dashboard for exploring plasmid sequences and mobile genetic elements."
+      },
+      {
+        "@type": "SoftwareApplication",
+        "name": "InfectoNET",
+        "url": "https://www.infectonet.org",
+        "applicationCategory": "Bioinformatics platform",
+        "operatingSystem": "Web",
+        "author": { "@type": "Person", "name": "Dr. Louise Cerdeira" },
+        "description": "Genomic-epidemiology dashboard tracking emerging and re-emerging pathogens worldwide."
+      }
+    ]
   }
   </script>
 </head>
@@ -123,10 +237,10 @@
         <li><a href="#about">About</a></li>
         <li><a href="#research">Research</a></li>
         <li><a href="#collaborations">Map</a></li>
+        <li><a href="#visitors">Visitors</a></li>
         <li><a href="#projects">Projects</a></li>
         <li><a href="#code">Code</a></li>
         <li><a href="#writing">Writing</a></li>
-        <li><a href="#creative">Creative</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
@@ -462,10 +576,58 @@
   </div>
 </section>
 
+<!-- ============ VISITORS ============ -->
+<section id="visitors">
+  <div class="container">
+    <p class="section-label" data-reveal>04 — Visitors · Visitantes</p>
+    <h2 data-reveal>You're here.<br><span style="background:linear-gradient(120deg,var(--accent),var(--accent-2),var(--accent-3));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;font-style:italic;">Nice to meet you.</span></h2>
+    <p class="lead" style="max-width: 42rem; margin-bottom: var(--space-7);" data-reveal>
+      A live, privacy-respecting peek at where this site is being read from
+      right now — including yours, if you're curious. Your location appears
+      only to you and is never logged or shared.
+    </p>
+
+    <div class="visitors-grid" data-reveal>
+      <div class="visitor-welcome">
+        <span class="visitor-globe" aria-hidden="true">🌍</span>
+        <h3>You are visiting from</h3>
+        <div class="visitor-loc" id="visitorLoc">
+          <span class="visitor-loading">Detecting</span>
+        </div>
+        <div class="visitor-org" id="visitorOrg"></div>
+        <p class="visitor-greet" id="visitorGreet"></p>
+
+        <p class="visitor-privacy">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          Privacy: geo lookup runs in your browser only · no IP stored · no cookies ·
+          counters are anonymous integers
+        </p>
+      </div>
+
+      <div class="visitor-stats-card">
+        <h3 style="font-size: var(--fs-xs); text-transform: uppercase; letter-spacing: 0.18em; color: var(--text-muted); font-family: var(--font-sans); font-weight: 400; margin-bottom: var(--space-5);">Visits so far</h3>
+        <div class="visitor-stat-row">
+          <div class="visitor-stat"><strong id="countTotal">—</strong><span>All-time visits</span></div>
+          <div class="visitor-stat"><strong id="countToday">—</strong><span>Today</span></div>
+          <div class="visitor-stat"><strong id="countCountry">—</strong><span>Your country</span></div>
+          <div class="visitor-stat"><strong id="countContinents">6</strong><span>Continents reached</span></div>
+        </div>
+
+        <p class="visitor-privacy">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 0 20M12 2a15.3 15.3 0 0 0 0 20"/></svg>
+          Look up at the world map — there should be a glowing pin at your
+          approximate location. Visitor counters powered by an open-source,
+          cookieless tally service.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ============ PROJECTS ============ -->
 <section id="projects" style="background: var(--bg-elev);">
   <div class="container">
-    <p class="section-label" data-reveal>04 — Projects</p>
+    <p class="section-label" data-reveal>05 — Projects</p>
     <h2 data-reveal>Things I've built.</h2>
     <p class="lead" style="max-width: 42rem; margin-bottom: var(--space-7);" data-reveal>
       Open platforms, pipelines, and tools — most of them used in production by public-health
@@ -647,7 +809,7 @@
 <!-- ============ EXPERIENCE ============ -->
 <section id="experience" style="background: var(--bg-elev);">
   <div class="container">
-    <p class="section-label" data-reveal>05 — Experience</p>
+    <p class="section-label" data-reveal>06 — Experience</p>
     <h2 data-reveal>Career, briefly.</h2>
 
     <ol class="timeline" data-reveal>
@@ -688,7 +850,7 @@
 <!-- ============ CODE (GitHub) ============ -->
 <section id="code">
   <div class="container">
-    <p class="section-label" data-reveal>06 — Code</p>
+    <p class="section-label" data-reveal>07 — Code</p>
     <h2 data-reveal>Latest from GitHub.</h2>
     <p class="lead" style="max-width: 42rem;" data-reveal>
       A live feed of my most recently updated public repositories — bioinformatics, web tooling,
@@ -708,7 +870,7 @@
 <!-- ============ WRITING ============ -->
 <section id="writing" style="background: var(--bg-elev);">
   <div class="container">
-    <p class="section-label" data-reveal>07 — Writing</p>
+    <p class="section-label" data-reveal>08 — Writing</p>
     <h2 data-reveal>Notes from the lab and the editor.</h2>
     <p class="lead" style="max-width: 42rem; margin-bottom: var(--space-7);" data-reveal>
       Short essays on the things I actually think about — open science, software engineering for
@@ -748,7 +910,7 @@
 <!-- ============ CREATIVE ============ -->
 <section id="creative">
   <div class="container">
-    <p class="section-label" data-reveal>08 — Off the clock</p>
+    <p class="section-label" data-reveal>09 — Off the clock</p>
     <h2 data-reveal>Photography, poems, and a podcast.</h2>
     <p class="lead" style="max-width: 42rem; margin-bottom: var(--space-7);" data-reveal>
       Outside the terminal I keep a camera, a notebook, and a microphone within reach. Some of what
@@ -817,7 +979,7 @@
 <section id="contact" style="background: var(--bg-elev);">
   <div class="container">
     <div class="contact-card">
-      <p class="section-label" style="justify-content: center; margin-left: auto; margin-right: auto;">09 — Get in touch</p>
+      <p class="section-label" style="justify-content: center; margin-left: auto; margin-right: auto;">10 — Get in touch</p>
       <h2>Let's build something useful.</h2>
       <p class="lead">
         Open to collaborations on genomic surveillance, AMR, public-health platforms, and bioinformatics

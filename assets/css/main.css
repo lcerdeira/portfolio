@@ -1278,3 +1278,169 @@ section { padding: var(--space-9) 0; position: relative; }
   .map-legend { flex-direction: column; align-items: flex-start; }
 }
 
+/* ---------- 22. Visitor map / "you are here" ---------- */
+.visitor-marker .core,
+.visitor-marker .ring {
+  --marker-color: var(--accent-2);
+}
+.visitor-marker .core {
+  fill: var(--accent-2);
+  filter: drop-shadow(0 0 6px var(--accent-2));
+}
+.visitor-marker .ring {
+  stroke: var(--accent-2);
+  stroke-width: 1.4;
+}
+.visitor-marker .label {
+  opacity: 1 !important;
+  font-weight: 600;
+  fill: var(--text);
+}
+
+.visitors-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: var(--space-5);
+  align-items: stretch;
+}
+@media (max-width: 800px) { .visitors-grid { grid-template-columns: 1fr; } }
+
+.visitor-welcome,
+.visitor-stats-card {
+  position: relative;
+  padding: var(--space-6);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border);
+  background:
+    radial-gradient(ellipse 90% 70% at 20% 0%, color-mix(in srgb, var(--accent-2) 14%, transparent), transparent 70%),
+    var(--bg-elev);
+  overflow: hidden;
+}
+.visitor-welcome::after {
+  content: "";
+  position: absolute;
+  inset: -30%;
+  background: conic-gradient(from 0deg, var(--accent), var(--accent-2), var(--accent-3), var(--accent-4), var(--accent));
+  filter: blur(80px);
+  opacity: 0.12;
+  pointer-events: none;
+  animation: visitorOrbit 30s linear infinite;
+}
+@keyframes visitorOrbit {
+  to { transform: rotate(360deg); }
+}
+.visitor-welcome > *, .visitor-stats-card > * { position: relative; z-index: 1; }
+
+.visitor-globe {
+  font-size: 2.5rem;
+  margin-bottom: var(--space-3);
+  display: inline-block;
+  animation: visitorGlobeSpin 8s ease-in-out infinite;
+  transform-origin: center;
+}
+@keyframes visitorGlobeSpin {
+  0%, 100% { transform: rotate(-6deg); }
+  50% { transform: rotate(6deg); }
+}
+.visitor-welcome h3 {
+  font-size: var(--fs-md);
+  color: var(--text-muted);
+  font-family: var(--font-sans);
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: var(--fs-xs);
+  margin-bottom: var(--space-3);
+}
+.visitor-loc {
+  font-family: var(--font-serif);
+  font-size: var(--fs-xl);
+  color: var(--text);
+  margin-bottom: var(--space-2);
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  line-height: 1.2;
+}
+.visitor-loc .flag { font-size: 1.6em; line-height: 1; }
+.visitor-org {
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--accent);
+  margin-bottom: var(--space-4);
+}
+.visitor-org .institution { color: var(--accent-2); }
+.visitor-greet {
+  font-size: var(--fs-sm);
+  color: var(--text-muted);
+  margin: 0;
+}
+.visitor-loading {
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--text-faint);
+}
+.visitor-loading::after {
+  content: "";
+  display: inline-block;
+  width: 1em;
+  animation: visitorDots 1.4s steps(4, end) infinite;
+}
+@keyframes visitorDots {
+  0%   { content: ""; }
+  25%  { content: "."; }
+  50%  { content: ".."; }
+  75%  { content: "..."; }
+}
+
+.visitor-stat-row {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-4) var(--space-5);
+  margin-top: var(--space-4);
+}
+.visitor-stat strong {
+  display: block;
+  font-family: var(--font-serif);
+  font-size: var(--fs-2xl);
+  color: var(--text);
+  line-height: 1;
+  background: linear-gradient(120deg, var(--accent), var(--accent-2));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.visitor-stat span {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--text-faint);
+  margin-top: var(--space-2);
+}
+
+.visitor-privacy {
+  margin-top: var(--space-5);
+  padding-top: var(--space-4);
+  border-top: 1px dashed var(--border);
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-faint);
+  line-height: 1.6;
+}
+.visitor-privacy svg {
+  width: 12px; height: 12px;
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: var(--space-1);
+  color: var(--accent-3);
+}
+
+

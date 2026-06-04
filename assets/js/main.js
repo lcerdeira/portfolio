@@ -290,4 +290,207 @@
       markersEl.appendChild(g);
     });
   }
+
+  /* ---------- 9. Visitor map + counters ----------
+     Privacy notes:
+     - All geo lookup happens client-side via ipwho.is (HTTPS, no signup).
+     - We do NOT log or transmit the visitor's IP, location, or any PII to
+       any server we control. The visitor is the only one who sees their
+       own location.
+     - The visit counter is a simple per-page tally via abacus.jasoncameron.dev
+       (open source, no cookies, no IP storage, just an integer per key).
+     - Aggregated country counters are anonymous (just a number per
+       country code), no per-visitor history.
+  ---------------------------------------------------- */
+  const visitorLoc = document.getElementById("visitorLoc");
+  const visitorOrg = document.getElementById("visitorOrg");
+  const visitorGreet = document.getElementById("visitorGreet");
+  const countTotal = document.getElementById("countTotal");
+  const countToday = document.getElementById("countToday");
+  const countCountry = document.getElementById("countCountry");
+  const countContinents = document.getElementById("countContinents");
+
+  function escapeText(s) {
+    const d = document.createElement("div");
+    d.textContent = String(s || "");
+    return d.innerHTML;
+  }
+
+  function formatNum(n) {
+    if (n == null || isNaN(n)) return "—";
+    return new Intl.NumberFormat().format(n);
+  }
+
+  // Detect "institutional" ISP/org strings — universities, hospitals,
+  // research institutes, government, etc. Returns a friendly label or null.
+  function institutionLabel(geo) {
+    const candidates = [
+      geo?.connection?.org,
+      geo?.connection?.isp,
+      geo?.connection?.domain,
+      geo?.org
+    ].filter(Boolean);
+    if (!candidates.length) return null;
+    const text = candidates[0];
+    const lower = text.toLowerCase();
+    const KEYWORDS = [
+      "univ", "college", "school", "academy", "institute", "instituto",
+      "hospital", "clinic", "health", "saúde", "saude",
+      "research", "laborat", "centro de pesquisa", "cnpq", "fapesp",
+      "ministry", "government", "gov.", "minist", "fund",
+      "ngo", "foundation", "fundac", "fundaç"
+    ];
+    if (KEYWORDS.some((k) => lower.includes(k))) {
+      return text;
+    }
+    // domains ending in .edu, .ac, .gov are almost always institutional
+    if (geo?.connection?.domain) {
+      const d = geo.connection.domain.toLowerCase();
+      if (/\.(edu|ac|gov|edu\.[a-z]{2}|ac\.[a-z]{2}|gov\.[a-z]{2})$/.test(d)) {
+        return text;
+      }
+    }
+    return null;
+  }
+
+  function greetingFor(geo) {
+    const code = (geo?.country_code || "").toUpperCase();
+    // tiny localised hello — a small joyful touch in the visitor's language
+    const HELLO = {
+      BR: "Olá!", PT: "Olá!",
+      ES: "¡Hola!", AR: "¡Hola!", MX: "¡Hola!", CL: "¡Hola!", PE: "¡Hola!", CO: "¡Hola!",
+      FR: "Bonjour !", BE: "Bonjour !",
+      DE: "Hallo!", AT: "Hallo!", CH: "Hallo!",
+      IT: "Ciao!",
+      NL: "Hallo!",
+      JP: "こんにちは!",
+      CN: "你好!", TW: "你好!",
+      KR: "안녕하세요!",
+      IN: "नमस्ते!",
+      RU: "Привет!",
+      US: "Hello!", GB: "Hello!", AU: "G'day!", IE: "Hello!",
+      ZA: "Hallo!"
+    };
+    return HELLO[code] || "Hello!";
+  }
+
+  async function fetchGeo() {
+    try {
+      const r = await fetch("https://ipwho.is/", { mode: "cors" });
+      if (!r.ok) return null;
+      const data = await r.json();
+      return data && data.success ? data : null;
+    } catch (e) { return null; }
+  }
+
+  async function bumpCounter(key) {
+    try {
+      const ns = "louisecerdeira-com";
+      const r = await fetch(`https://abacus.jasoncameron.dev/hit/${ns}/${encodeURIComponent(key)}`);
+      if (!r.ok) return null;
+      const data = await r.json();
+      return data?.value ?? null;
+    } catch (e) { return null; }
+  }
+  async function readCounter(key) {
+    try {
+      const ns = "louisecerdeira-com";
+      const r = await fetch(`https://abacus.jasoncameron.dev/get/${ns}/${encodeURIComponent(key)}`);
+      if (!r.ok) return null;
+      const data = await r.json();
+      return data?.value ?? null;
+    } catch (e) { return null; }
+  }
+
+  function addVisitorMarkerToMap(geo) {
+    if (!markersEl || !geo || geo.latitude == null) return;
+    const SVG_NS = "http://www.w3.org/2000/svg";
+    const x = (geo.longitude + 180) * 1000 / 360;
+    const y = (90 - geo.latitude) * 500 / 180;
+
+    const g = document.createElementNS(SVG_NS, "g");
+    g.setAttribute("class", "map-marker visitor-marker");
+    g.setAttribute("transform", `translate(${x.toFixed(1)} ${y.toFixed(1)})`);
+
+    const pin = document.createElementNS(SVG_NS, "g");
+    pin.setAttribute("class", "pin");
+    const ring = document.createElementNS(SVG_NS, "circle");
+    ring.setAttribute("class", "ring");
+    ring.setAttribute("r", "5");
+    pin.appendChild(ring);
+    const core = document.createElementNS(SVG_NS, "circle");
+    core.setAttribute("class", "core");
+    core.setAttribute("r", "4");
+    pin.appendChild(core);
+    g.appendChild(pin);
+
+    const label = document.createElementNS(SVG_NS, "text");
+    label.setAttribute("class", "label");
+    label.setAttribute("y", "-12");
+    label.textContent = `${geo.flag?.emoji || ""}  You · ${geo.city || geo.country}`;
+    g.appendChild(label);
+
+    const title = document.createElementNS(SVG_NS, "title");
+    title.textContent = `You are here: ${geo.city || ""} ${geo.country}`.trim();
+    g.appendChild(title);
+
+    markersEl.appendChild(g);
+  }
+
+  // Visitor section flow
+  async function runVisitorSection() {
+    if (!visitorLoc && !countTotal) return; // section absent
+
+    const geo = await fetchGeo();
+
+    if (visitorLoc) {
+      if (geo) {
+        const flag = geo.flag?.emoji || "🌐";
+        const city = geo.city ? `${geo.city}, ` : "";
+        visitorLoc.innerHTML = `<span class="flag">${flag}</span> ${escapeText(city)}${escapeText(geo.country || "")}`;
+        const inst = institutionLabel(geo);
+        if (visitorOrg) {
+          if (inst) {
+            visitorOrg.innerHTML = `Coming from <span class="institution">${escapeText(inst)}</span>`;
+          } else if (geo.connection?.isp) {
+            visitorOrg.textContent = `via ${geo.connection.isp}`;
+          } else {
+            visitorOrg.textContent = "";
+          }
+        }
+        if (visitorGreet) {
+          visitorGreet.textContent = `${greetingFor(geo)} Thanks for stopping by — it's nice to see this site reaching ${geo.country || "your part of the world"}.`;
+        }
+        addVisitorMarkerToMap(geo);
+      } else {
+        visitorLoc.innerHTML = `<span class="flag">🌐</span> Welcome, wherever you are.`;
+        if (visitorOrg) visitorOrg.textContent = "";
+        if (visitorGreet) visitorGreet.textContent = "Couldn't detect your location (and that's fine — your browser or VPN may have blocked it).";
+      }
+    }
+
+    // Counters — bump total + country in parallel, read continents from local set.
+    const tasks = [bumpCounter("visits")];
+    if (geo?.country_code) tasks.push(bumpCounter(`country-${geo.country_code}`));
+    const [total] = await Promise.all(tasks);
+    if (countTotal) countTotal.textContent = formatNum(total);
+    // Today: separate daily key (best-effort, optional)
+    if (countToday) {
+      const today = new Date().toISOString().slice(0, 10).replace(/-/g, "");
+      const t = await bumpCounter(`day-${today}`);
+      countToday.textContent = formatNum(t);
+    }
+    if (countCountry && geo?.country) {
+      countCountry.textContent = geo.country;
+    }
+    // Continents — static value reflects the historical span
+    if (countContinents) countContinents.textContent = "6";
+  }
+
+  // Defer slightly so it doesn't compete with the main thread.
+  if ("requestIdleCallback" in window) {
+    requestIdleCallback(runVisitorSection, { timeout: 2500 });
+  } else {
+    setTimeout(runVisitorSection, 600);
+  }
 })();

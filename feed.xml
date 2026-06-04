@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <channel>
+    <title>Dr. Louise Cerdeira — Writing</title>
+    <link>https://www.louisecerdeira.com/</link>
+    <atom:link href="https://www.louisecerdeira.com/feed.xml" rel="self" type="application/rss+xml" />
+    <description>Essays on bioinformatics, antimicrobial resistance, open science, and software engineering for research — by Dr. Louise Cerdeira.</description>
+    <language>en-gb</language>
+    <copyright>© Dr. Louise Cerdeira. All rights reserved.</copyright>
+    <managingEditor>louise.cerdeira@gmail.com (Dr. Louise Cerdeira)</managingEditor>
+    <webMaster>louise.cerdeira@gmail.com (Dr. Louise Cerdeira)</webMaster>
+    <category>Science</category>
+    <category>Bioinformatics</category>
+    <category>Open Science</category>
+    <image>
+      <url>https://www.louisecerdeira.com/assets/images/apple-touch-icon.png</url>
+      <title>Dr. Louise Cerdeira</title>
+      <link>https://www.louisecerdeira.com/</link>
+    </image>
+    <ttl>1440</ttl>
+
+    <item>
+      <title>Hello, again</title>
+      <link>https://www.louisecerdeira.com/blog/welcome.html</link>
+      <guid isPermaLink="true">https://www.louisecerdeira.com/blog/welcome.html</guid>
+      <pubDate>Fri, 01 May 2026 09:00:00 +0000</pubDate>
+      <dc:creator>Dr. Louise Cerdeira</dc:creator>
+      <category>Personal</category>
+      <description><![CDATA[Reintroducing myself, the site, and the strange continuity between a PhD in São Paulo and a dashboard in London.]]></description>
+    </item>
+
+    <item>
+      <title>Why I'm building a GPU aligner from scratch</title>
+      <link>https://www.louisecerdeira.com/blog/gpu-bioinformatics.html</link>
+      <guid isPermaLink="true">https://www.louisecerdeira.com/blog/gpu-bioinformatics.html</guid>
+      <pubDate>Sun, 22 Mar 2026 09:00:00 +0000</pubDate>
+      <dc:creator>Dr. Louise Cerdeira</dc:creator>
+      <category>Dragon</category>
+      <category>GPU</category>
+      <category>Rust</category>
+      <description><![CDATA[Genomic surveillance shouldn't require an HPC cluster. Notes on Dragon, FM-indices on GPU, and edge bioinformatics for low- and middle-income countries.]]></description>
+    </item>
+
+    <item>
+      <title>What it took to ship AMRnet</title>
+      <link>https://www.louisecerdeira.com/blog/amrnet-launch.html</link>
+      <guid isPermaLink="true">https://www.louisecerdeira.com/blog/amrnet-launch.html</guid>
+      <pubDate>Thu, 15 Jan 2026 09:00:00 +0000</pubDate>
+      <dc:creator>Dr. Louise Cerdeira</dc:creator>
+      <category>AMRnet</category>
+      <category>Research software</category>
+      <description><![CDATA[The years, the rewrites, the people. Lessons on building research software that actually gets used.]]></description>
+    </item>
+  </channel>
+</rss>
