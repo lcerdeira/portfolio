@@ -1,0 +1,28 @@
+/* TEAM */
+
+  Owner & author: Dr. Louise Cerdeira
+  Site: https://www.louisecerdeira.com
+  GitHub: @lcerdeira
+  ORCID: 0000-0002-4495-2615
+  Scholar: https://scholar.google.com/citations?user=O2dcz5MAAAAJ
+  Location: United Kingdom · 🇧🇷 originally Brazil
+
+/* THANKS */
+
+  Every co-author from 32+ countries who has ever shared a typhoid,
+  Klebsiella, Salmonella, E. coli, Anopheles, or Wolbachia genome with the
+  public-health community. You make AMRnet, TyphiNET, PlasmidNET, and
+  InfectoNET possible.
+
+/* SITE */
+
+  Last update: 2026/06
+  Standards: HTML5, CSS3, ES2020, WCAG 2.1 AA
+  Components: vanilla HTML, CSS, JS — no framework
+  Hosted: GitHub Pages → custom domain via GoDaddy
+  Fonts: Inter, Newsreader, JetBrains Mono (Google Fonts)
+  Theme: handcrafted (coral · sunshine · mint · lavender)
+  Repository: https://github.com/lcerdeira/portfolio
+  Licence: MIT
+
+  For pleasure without pressure ✦
